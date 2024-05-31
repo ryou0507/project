@@ -1,0 +1,1631 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  overflow: hidden; /* アニメーションの範囲外を隠す */
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 完全に読み込んでからサイト表示 */
+/* body {
+  display: none;
+} */
+
+/**********　PC用ヘッダー　レイアウト　**********/
+/* PC用ヘッダー レイアウト */
+.header {
+  display: block;
+}
+
+.pc-header {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* スマホ用ヘッダーを非表示に */
+  .header {
+    display: none;
+  }
+
+  /**********　ヘッダー固定アニメーション　**********/
+  /* PC用ヘッダーを表示 */
+  .pc-header {
+    display: block;
+    position: relative;
+    width: 100%; /* 全幅をカバー */
+    z-index: 1000; /* 他のコンテンツの上に表示 */
+    transition: all 0.5s ease;
+  }
+
+  .pc-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* 背景色を固定時に設定 */
+    transition: all 0.5s ease;
+  }
+
+  .pc-header.unfixed {
+    position: relative;
+    transition: all 0.5s ease;
+  }
+
+  .pc-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+  }
+
+  .pc-header.fixed .pc-header-container {
+    background-color: transparent; /* ヘッダーが固定された時の背景色を透明に */
+  }
+
+  /**********　ヘッダー固定アニメーションここまで　**********/
+
+  .pc-header-left {
+    width: 62%;
+    margin-left: 4%;
+  }
+
+  .pc-header-right {
+    margin-top: 5px;
+    margin-left: 4%;
+    width: 30%;
+  }
+
+  .pc-header-inquiry {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pc-header-inquiry-button {
+    font-weight: normal;
+    color: #fff;
+    background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+    border-radius: 100px;
+    width: 66%;
+    height: 48px;
+  }
+
+  .pc-header-inquiry-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: all 0.5s;
+    background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+    border-radius: 100px;
+  }
+
+  a.pc-header-inquiry-button span {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1em;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 1000;
+    top: 8px;
+  }
+
+  a.pc-header-inquiry-button:hover {
+    color: #fff;
+  }
+
+  a.pc-header-inquiry-button:hover:after {
+    opacity: 0;
+  }
+
+  .pc-header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* ナビゲーションバーの背景色 */
+    padding: 20px 20px;
+    border-radius: 50px; /* 角を丸くする */
+    border: 4px solid #dba2f7; /* 枠線の色と太さ */
+    width: 100%; /* コンテンツの幅にフィット */
+    height: 80px;
+    margin: 20px auto; /* 中央に配置 */
+  }
+
+  .pc-nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pc-nav-links li {
+    margin: 0 15px; /* ナビゲーション項目間の余白 */
+  }
+
+  .pc-nav-links a {
+    text-decoration: none; /* 下線を削除 */
+    color: #ff7fee; /* テキストの色 */
+    font-size: 1.5em; /* テキストのサイズ */
+    font-weight: bold;
+  }
+
+  .pc-nav-links a:hover {
+    color: #dba2f7; /* ホバー時のテキストの色 */
+    transition: 0.3s;
+  }
+}
+
+/**********　スマホ用ヘッダー　レイアウト　**********/
+.header {
+  position: fixed; /* ヘッダーを固定位置に設定 */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* 他のコンテンツの上に表示 */
+  background-color: #272526; /* ヘッダーの背景色 */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #272526;
+}
+
+.header-sns {
+  display: flex;
+}
+
+.header-X-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  top: 19px;
+  left: -107px;
+}
+
+.header-X-img {
+  width: 20px;
+  height: auto;
+}
+
+.header-youtube-icon {
+  overflow: hidden;
+  position: relative;
+  top: 16px;
+  left: -100px;
+}
+
+.header-youtube-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/**********　ファーストビュー　レイアウト　**********/
+.firstview-container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 61px;
+  background-color: #000;
+  z-index: 99;
+}
+
+.firstview-video {
+  position: relative;
+  width: 102%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#bg-video {
+  width: 100%; /* 動画の幅を50%に設定 */
+  height: auto; /* 高さを自動調整してアスペクト比を維持 */
+  z-index: -1;
+}
+
+.firstview-content {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+.firstview-content h1 {
+  font-size: 3rem;
+  opacity: 0;
+  animation: fadeInAnime 3s forwards ease-in-out; /* アニメーションを追加 */
+}
+
+.firstview-content img.firstview-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+img.firstview-logo {
+  width: 160px;
+}
+
+@media (min-width: 768px) {
+  img.firstview-logo {
+    width: 530px;
+  }
+}
+
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**********　PC用ファーストビュー　レイアウト　**********/
+@media (min-width: 768px) {
+  .firstview-container {
+    margin-top: 0px;
+  }
+}
+
+/**********　h2　**********/
+/*===========
+inview
+===========*/
+.inview {
+  overflow: hidden; /* アニメーションの範囲外を隠す */
+}
+
+.fadeIn_right {
+  opacity: 0;
+  transform: translate(50%, 0);
+  transition: 1s;
+}
+
+.fadeIn_right.is-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.top-h2 {
+  letter-spacing: 1px;
+  font-size: 3em;
+  color: #000; /* 透明に設定 */
+  margin-bottom: 10px;
+  position: relative;
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
+  color: transparent; /* テキストの色を透明に設定 */
+}
+
+/* タイトル下の線のスタイル */
+.top-h2::after {
+  content: "";
+  display: block;
+  width: 97%; /* 線の幅を調整可能に */
+  margin: 10px 0 10% 0;
+  border-bottom: 1px solid #ff7fee; /* ラインの色を紫に設定 */
+}
+
+@media (min-width: 768px) {
+  .top-h2 {
+    font-size: clamp(3em, 9vw, 5em) !important;
+    -webkit-text-stroke: 3px #ff7fee;
+    margin-left: 25px;
+  }
+}
+
+/**********　スマホ用ABOUT　レイアウト　**********/
+.about-section {
+  padding: 20px;
+  background-color: #000; /* 背景色を黒に設定 */
+  font-family: "Hachi Maru Pop", cursive;
+  display: block;
+}
+
+.mobile-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* relative にして、内部要素の絶対配置を可能に */
+  width: 100%;
+  max-width: 800px; /* 必要に応じて調整 */
+  margin: 0 auto; /* セクション全体を中央寄せ */
+  flex-direction: column;
+}
+
+.heart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.heart {
+  display: block;
+  width: 100%; /* 必要に応じて調整 */
+  height: auto;
+}
+
+.heart.is-show {
+  animation: popupAnimation 2s forwards; /* アニメーションを適用 */
+}
+
+.illust {
+  position: absolute;
+  top: 44%;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+  width: 37%; /* 必要に応じて調整 */
+  height: auto;
+  opacity: 0; /* 最初は非表示にしておく */
+  transition: all 2s; /* 動きを滑らかに */
+}
+
+.profile {
+  position: absolute;
+  top: 10%; /* 必要に応じて調整 */
+  left: 5%; /* 必要に応じて調整 */
+  color: #fff; /* テキストの色を白に設定 */
+  text-align: left;
+  -webkit-text-stroke: 0.4px #ff7fee; /* テキストの輪郭を設定 */
+}
+
+.kana {
+  font-size: 8px; /* フォントサイズを小さく設定 */
+  padding: 0 0 1px 6px;
+}
+
+.name {
+  font-size: 24px; /* フォントサイズを大きく設定 */
+}
+
+.camping {
+  font-size: 7.5px; /* フォントサイズをnameより小さく、kanaより大きく設定 */
+  padding: 7px 0 0 0;
+}
+
+.profession {
+  position: absolute;
+  top: 25%; /* 必要に応じて調整 */
+  left: 7%; /* 必要に応じて調整 */
+  color: #fff; /* テキストの色を白に設定 */
+  text-align: left;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.profession ul {
+  list-style: none;
+}
+
+.self {
+  position: absolute;
+  top: 10%; /* 必要に応じて調整 */
+  left: 67%; /* 必要に応じて調整 */
+  color: #fff; /* テキストの色を白に設定 */
+  font-size: 11px;
+}
+
+.self-item {
+  padding-bottom: 10px;
+}
+
+.slideConts {
+  opacity: 0;
+}
+.slide {
+  animation: slideAnime 2s ease forwards;
+}
+@keyframes slideAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.txt1 {
+  animation-delay: 0.2s;
+}
+.txt2 {
+  animation-delay: 0.4s;
+}
+.txt3 {
+  animation-delay: 0.6s;
+}
+.txt4 {
+  animation-delay: 0.8s;
+}
+.txt5 {
+  animation-delay: 1s;
+}
+.txt6 {
+  animation-delay: 1.2s;
+}
+.txt7 {
+  animation-delay: 1.4s;
+}
+.txt8 {
+  animation-delay: 1.6s;
+}
+.txt9 {
+  animation-delay: 1.8s;
+}
+.txt10 {
+  animation-delay: 2s;
+}
+
+.mobile-about-bottom {
+  display: flex;
+  margin-left: 24px;
+}
+
+.about-sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 55px;
+}
+
+.about-X-icon {
+  margin-right: 10px;
+}
+
+.about-X-img {
+  width: 32px;
+}
+
+.about-youtube-icon {
+  margin-left: 10px;
+}
+
+.about-youtube-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.about-sns.is-show {
+  animation: popupAnimation 2s forwards;
+}
+
+/**********　ABOUT　PC　レイアウト　**********/
+
+@media (min-width: 768px) {
+  .about-section {
+    display: none;
+  }
+
+  .pc-about-section {
+    display: block !important;
+  }
+
+  .pc-about-sns.is-show {
+    animation: popupAnimation 2s forwards;
+  }
+}
+
+.pc-about-section {
+  padding: 20px;
+  background-color: #000;
+  font-family: "Hachi Maru Pop", cursive;
+  display: none;
+}
+
+.pc-about-content {
+  display: flex;
+  justify-content: center;
+}
+
+.pc-about-container {
+  background-color: #333;
+  border-radius: 70px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  max-width: 875px;
+}
+
+.pc-about-text-box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.pc-about-sns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pc-about-X-icon {
+  margin-right: 40px;
+  margin-left: 61px;
+}
+
+.pc-about-X-img {
+  width: 32px;
+}
+
+.pc-about-youtube-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.pc-about-title-roman {
+  font-size: 20px;
+  color: white;
+  margin-left: 73px;
+  margin-top: 15px;
+  -webkit-text-stroke: 0.4px #ff7fee;
+  white-space: nowrap;
+}
+
+.pc-about-title {
+  font-size: 50px;
+  color: white;
+  margin-left: 55px;
+  -webkit-text-stroke: 0.4px #ff7fee;
+  white-space: nowrap;
+}
+
+.pc-about-camping {
+  font-size: 20px;
+  margin: 15px 60px;
+  color: white;
+  white-space: nowrap;
+  -webkit-text-stroke: 0.4px #ff7fee;
+  z-index: 2;
+}
+
+.pc-about-subtitle {
+  font-size: 20px;
+  margin: 7px 60px;
+  color: white;
+  white-space: nowrap;
+}
+
+.pc-about-details {
+  margin-top: 10px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-about-details p {
+  font-size: 18px;
+  margin: 8px 60px;
+  color: white;
+}
+
+.pc-about-image-box {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.pc-about-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  z-index: 1;
+}
+/* 新しいアニメーション用のCSS */
+.slide-in {
+  display: inline-block;
+}
+
+.slide-in_inner {
+  display: inline-block;
+}
+
+.leftAnime {
+  opacity: 0;
+}
+
+.slideAnimeLeftRight {
+  animation-name: slideTextX100;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.char.slideAnimeLeftRight,
+.char.slideAnimeLeftRightSlow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* アニメーションの定義 */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideAnimeLeftRight {
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.char.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/**********　MOVIE　レイアウト　**********/
+.movie-section {
+  padding: 20px;
+  background-color: #000; /* 背景色を黒に設定 */
+  height: auto;
+}
+
+.youtube-container {
+  text-align: center;
+  opacity: 0; /* 最初は非表示にしておく */
+  transition: all 2s; /* 動きを滑らかに */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: 200px; /* デフォルトの高さ */
+}
+
+/* フェードイン用のクラス */
+.fadeIn {
+  opacity: 1;
+}
+
+/**********　MOVIE　PC用レイアウト　**********/
+
+@media (min-width: 768px) {
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .youtube-container {
+    position: relative;
+    padding-top: calc(9 / 16 * 100%);
+    max-width: 1500px; /* 最大幅を設定 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/**********　NEWS　レイアウト　**********/
+.news-section {
+  padding: 20px;
+  background-color: #000; /* 背景色を黒に設定 */
+}
+
+.custom-news-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  margin: 0 40px 20px 40px;
+  padding: 10px 0;
+  border-bottom: 2px solid #ff66cc;
+}
+
+.news-date {
+  display: inline-block;
+  background-color: #ff66cc;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.news-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.news-title a {
+  color: #ffffff;
+  text-decoration: none; /* 通常のリンク状態で下線を消す */
+  position: relative; /* 擬似要素の位置を基準にするために必要 */
+}
+
+.news-title a::after {
+  content: ""; /* 擬似要素の内容は空 */
+  display: block;
+  width: 100%; /* 下線の幅をリンクテキストと同じにする */
+  height: 1px; /* 下線の太さ */
+  background-color: #ff66cc; /* 下線の色 */
+  position: absolute;
+  bottom: -2px; /* 下線をテキストの下に配置 */
+  left: 0;
+  transform: scaleX(0); /* 初期状態では下線を非表示にする */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out; /* 下線のアニメーション */
+}
+
+.news-title a:hover::after {
+  transform: scaleX(1); /* ホバー時に下線を表示する */
+  transform-origin: bottom left;
+}
+
+.news-content {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a,
+.pagination span {
+  color: #ff66cc;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 0 2px;
+  display: inline-block;
+}
+
+.pagination .current {
+  background-color: #ff66cc;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .news-date {
+    font-size: clamp(0.5rem, 0.214rem + 0.6vw, 0.75rem);
+  }
+
+  .news-title {
+    font-size: clamp(1rem, 0.714rem + 0.6vw, 1.25rem);
+  }
+
+  .news-content {
+    font-size: clamp(0.75rem, 0.464rem + 0.6vw, 1rem);
+  }
+
+  div#news-container {
+    width: 70%;
+    margin: 0 auto 10% auto;
+  }
+}
+
+/**********　single-news レイアウト　**********/
+.single-news-title {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  color: white;
+}
+
+.news-box {
+  background-color: #000;
+  padding: 100px 50px 1px 50px;
+  height: auto;
+}
+
+.news-box > .news-date {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.news-box > .news-content {
+  border-bottom: 2px solid #ff66cc;
+  padding-bottom: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .news-box {
+    padding: 10% 10% 1% 10%;
+  }
+
+  .news-box > .news-date {
+    font-size: clamp(0.8rem, 0.275rem + 1.09vw, 1.3rem);
+  }
+
+  .single-news-title {
+    font-size: clamp(1.5rem, 0.451rem + 2.19vw, 2.5rem);
+  }
+
+  .news-box > .news-content {
+    font-size: clamp(1rem, 0.685rem + 0.66vw, 1.3rem);
+  }
+
+  .news-box > .btn-container span {
+    font-size: clamp(1rem, -0.049rem + 2.19vw, 2rem);
+  }
+}
+
+/**********　GOODS　レイアウト　**********/
+.goods-section {
+  padding: 20px;
+  background-color: #000; /* 背景色を黒に設定 */
+}
+
+.goods-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列のグリッドに設定 */
+  gap: 70px 20px; /* アイテム間のスペースを設定 */
+  justify-items: center; /* アイテムを中央揃えに設定 */
+  scroll-behavior: smooth;
+}
+
+.goods-item {
+  text-align: center; /* テキストを中央揃えに設定 */
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 400;
+  font-style: normal;
+  position: relative; /* 子要素の位置を相対的にするために追加 */
+}
+
+.goods-item p {
+  margin-top: 10px;
+  color: #fff; /* テキストの色を白に設定 */
+  display: block;
+  white-space: normal;
+}
+
+.goods-item .price {
+  margin-top: 10px; /* 商品名と金額の間に余白を追加 */
+  color: #fff; /* テキストの色を白に設定 */
+}
+
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 200px; /* 高さを調整 */
+}
+
+.slider-item {
+  max-width: 146px !important;
+  max-height: 100px !important;
+  width: 100% !important;
+  object-fit: contain; /* 画像の比率を保ちながら調整 */
+  display: block;
+  margin: 0 auto; /* 中央揃え */
+}
+
+.slick-arrow {
+  display: none; /* 余分な矢印を非表示にする */
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  z-index: 3;
+  top: 42%;
+  cursor: pointer;
+  outline: none;
+  border-top: 8px solid black;
+  border-right: 8px solid black;
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+  display: block;
+}
+
+.slick-prev {
+  left: 2.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: 2.5%;
+  transform: rotate(45deg);
+}
+
+/**********　GOODS　PC用レイアウト　**********/
+@media (min-width: 768px) {
+  .goods-container {
+    grid-template-columns: repeat(4, 1fr); /* 4列のグリッドに設定 */
+
+    color: #fff; /* テキストの色を白に設定 */
+  }
+  .goods-item p {
+    margin-top: 10px;
+    font-size: clamp(14px, 2vw, 24px);
+  }
+
+  .slider-item {
+    max-width: 20% !important;
+    max-height: 17vw !important;
+  }
+}
+
+/**********　WORK　レイアウト　**********/
+
+/* セクション全体のスタイル */
+.works-section {
+  padding: 20px;
+  background-color: #000; /* 背景色を黒に設定 */
+}
+
+/* コンテナのスタイル */
+.works-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列のグリッドに設定 */
+  gap: 20px; /* アイテム間のスペースを設定 */
+  justify-items: center; /* アイテムを中央揃えに設定 */
+}
+
+/* 各アイテムのスタイル */
+.work-item {
+  text-align: center; /* テキストを中央揃えに設定 */
+  font-family: "Noto Sans JP", sans-serif; /* フォントをNoto Sans JPに設定 */
+}
+
+/* image-containerの基本スタイル */
+.image-container {
+  width: 150px; /* 固定幅を設定 */
+  height: 150px; /* 固定高さを設定 */
+  background-color: white;
+  border: 2px solid #dba2f7; /* 枠の色を紫に設定 */
+  border-radius: 25px; /* 角を丸く設定 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* はみ出た部分を隠す */
+  margin: 0 auto;
+  opacity: 0; /* 初期状態の透明度を設定 */
+  transition: transform 1s, opacity 2s; /* アニメーションのトランジションを設定 */
+}
+
+.image-container img {
+  max-width: 100%; /* 画像の幅を最大100%に設定 */
+  max-height: 100%; /* 画像の高さを最大100%に設定 */
+}
+
+.work-item p {
+  margin-top: 10px;
+  color: #fff; /* テキストの色を白に設定 */
+  display: block;
+  white-space: normal;
+}
+
+/**********　WORKS　PC用レイアウト　**********/
+@media (min-width: 768px) {
+  .works-container {
+    grid-template-columns: repeat(4, 1fr); /* 4列のグリッドに設定 */
+  }
+
+  .image-container {
+    width: clamp(170px, 18vw, 300px); /* 画像コンテナの幅を画面幅に応じて調整 */
+    height: clamp(
+      170px,
+      18vw,
+      300px
+    ); /* 画像コンテナの高さを画面幅に応じて調整 */
+    border-width: clamp(2px, 0.5vw, 5px); /* 枠の幅を画面幅に応じて調整 */
+  }
+
+  .work-item p {
+    font-size: clamp(14px, 2vw, 24px); /* フォントサイズを画面幅に応じて調整 */
+  }
+}
+
+/**********　goods work　テキスト　動き用CSS　**********/
+.slideAnimeLeftRightSlow {
+  animation-name: slideTextX100;
+  animation-duration: 1.5s; /* より遅い速度に設定 */
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+.slideAnimeLeftRightSlow {
+  animation: slideInFromLeft 4.5s ease forwards;
+}
+
+/**********　image-container　アニメーション　**********/
+/* スクロールで表示されるときのスタイル */
+.image-container.is-show {
+  animation: popupAnimation 2s forwards; /* アニメーションを適用 */
+}
+
+/* 途中段階のスタイル（必要に応じて追加） */
+@keyframes popupAnimation {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/**********　goodsページ　レイアウト　**********/
+.goods-main {
+  background-color: #000;
+}
+
+.center-h1 {
+  letter-spacing: 1px;
+  font-size: 3em;
+  padding-top: 80px;
+  margin-bottom: 10px;
+  position: relative;
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
+  color: transparent; /* テキストの色を透明に設定 */
+  text-align: center;
+  overflow: hidden; /* アニメーションを適用するための設定 */
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateX(100%); /* 初期位置を右側に設定 */
+  animation: slide-in 1s ease forwards; /* アニメーションを適用 */
+}
+
+.center-h1::after {
+  content: "";
+  display: block;
+  width: 64%; /* 線の幅を調整可能に */
+  margin: 2% auto 12% auto;
+  border-bottom: 2px solid #ff7fee; /* ラインの色を紫に設定 */
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateX(100%); /* 初期位置を右側に設定 */
+  animation: slide-in 1s ease forwards 0.5s; /* アニメーションを適用 */
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/**********　goodsページ　PC用　レイアウト　**********/
+@media (min-width: 768px) {
+  .center-h1 {
+    font-size: clamp(3em, 9vw, 5em) !important;
+    -webkit-text-stroke: 3px #ff7fee;
+    margin-left: 25px;
+  }
+
+  .center-h1::after {
+    width: 45%;
+  }
+
+  .goods-container {
+    gap: 180px 20px;
+  }
+}
+
+/**********　フッター　レイアウト　**********/
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #272526; /* フッターの背景色 */
+}
+
+.footer-logo img {
+  max-height: 50px; /* ロゴの高さを調整 */
+  margin-right: -75px; /* ロゴとメニューの間の幅を調整 */
+  margin-left: -14px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding-left: 72px; /* 点が見えるように左にスペースを追加 */
+  margin: 0;
+  color: #fff; /* テキストの色を白に設定 */
+  font-family: "Noto Sans JP", sans-serif; /* フォントをNoto Sans JPに設定 */
+}
+
+.footer-nav li {
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #dba2f7, -1px -1px 0 #dba2f7, -1px 1px 0 #dba2f7,
+    1px -1px 0 #dba2f7, 0px 1px 0 #dba2f7, 0-1px 0 #dba2f7, -1px 0 0 #dba2f7,
+    1px 0 0 #dba2f7;
+  padding: 10px 5px 10px 5px;
+  position: relative; /* 相対位置を設定して、::beforeの絶対位置を基準にする */
+}
+
+.footer-nav li::before {
+  content: "•"; /* リスト項目の点を追加 */
+  color: #fff; /* 点の色を白に設定 */
+  -webkit-text-stroke: 1px #dba2f7; /* テキストの輪郭を設定 */
+  position: absolute;
+  left: -9px; /* 点をリスト項目の左に配置 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+
+.footer-nav li a:hover {
+  color: #dba2f7; /* ホバー時のテキストの色 */
+  opacity: 0.4;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.footer-icons img {
+  width: 30px; /* アイコンの横幅を調整 */
+  height: 30px; /* アイコンの高さを調整 */
+}
+
+.footer-X-img {
+  margin-right: 21px; /* YouTubeアイコンの左に余白を追加 */
+}
+
+.footer-youtube-img {
+  border-radius: 50%;
+}
+
+.copy-right {
+  background-color: #272526;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/**********　フッター　PC用レイアウト　**********/
+
+@media (min-width: 768px) {
+  .footer-container {
+    position: relative; /* 子要素の絶対位置を基準にするために必要 */
+  }
+
+  .footer-logo {
+    position: absolute;
+    left: 10%; /* フッターの左端から2%の位置にロゴを配置 */
+  }
+
+  .footer-logo img {
+    max-height: clamp(50px, 8vw, 120px); /* ロゴの高さを画面幅に応じて調整 */
+  }
+
+  .footer-nav {
+    flex-grow: 1; /* ナビゲーションメニューを中央に配置 */
+  }
+
+  .footer-nav ul {
+    padding-left: 46%;
+  }
+
+  .footer-nav li {
+    padding: clamp(5px, 1vw, 15px); /* パディングを画面幅に応じて調整 */
+  }
+
+  .footer-nav li::before {
+    left: clamp(-9px, -1vw, -20px); /* 点をリスト項目の左にもう少し配置 */
+    font-size: clamp(1em, 2vw, 2em); /* 点のサイズを画面幅に応じて調整 */
+  }
+
+  .footer-nav li a {
+    font-size: clamp(
+      1em,
+      2vw,
+      1.8em
+    ); /* リンクのフォントサイズを画面幅に応じて調整 */
+  }
+
+  .footer-icons {
+    position: absolute;
+    right: 12%;
+    margin-bottom: 0;
+  }
+
+  .footer-icons img {
+    width: clamp(30px, 5vw, 45px); /* アイコンの横幅を画面幅に応じて調整 */
+    height: clamp(30px, 5vw, 45px); /* アイコンの高さを画面幅に応じて調整 */
+  }
+
+  .footer-X-img {
+    margin-right: 2em;
+  }
+}
+
+/**********　aboutページ　スマホ用レイアウト　**********/
+.aboutpage-section {
+  position: relative; /* 必須: SNSアイコンを絶対配置するために必要 */
+  padding: 20px;
+  text-align: center;
+  background-color: #000;
+  font-family: "Hachi Maru Pop", cursive;
+}
+
+.aboutpage-main {
+  position: relative;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.aboutpage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.page-profile {
+  flex: 1;
+  text-align: left;
+}
+
+.page-profile .kana,
+.page-profile .name,
+.page-profile .camping,
+.profile-details {
+  color: #fff; /* テキストの色を白に設定 */
+}
+
+.page-profile .kana,
+.page-profile .name {
+  -webkit-text-stroke: 0.4px #ff7fee;
+}
+
+.page-profile .name {
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.page-profile .camping {
+  padding-bottom: 35px;
+}
+
+.page-profile .kana,
+.page-profile .camping,
+.profile-details li {
+  font-size: 12px;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2列のグリッド */
+  column-gap: 20px; /* 列の間のスペース */
+  row-gap: 10px; /* 行の間のスペース */
+}
+
+.profile-details li:nth-child(odd) {
+  grid-column: 1; /* 奇数番目のアイテムを左列に配置 */
+}
+
+.profile-details li:nth-child(even) {
+  grid-column: 2; /* 偶数番目のアイテムを右列に配置 */
+}
+
+.profile-details li {
+  margin-bottom: 10px;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.profile-details span {
+  color: #ffa0f4;
+}
+
+.page-about-sns {
+  position: absolute; /* 絶対配置 */
+  top: 30px; /* 親要素の上から20pxの位置に配置 */
+  right: 20px; /* 親要素の右から20pxの位置に配置 */
+  display: flex;
+  flex-direction: row; /* 横並びにする */
+  align-items: center;
+  gap: 10px; /* アイコン間のスペース */
+}
+
+.character-image {
+  margin: 20px 0;
+}
+
+.character-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fan-message {
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.fan-message h2,
+.activities h2 {
+  font-size: 20px;
+  color: white;
+  -webkit-text-stroke: 0.4px #ff7fee; /* テキストの輪郭を設定 */
+  margin-bottom: 20px;
+}
+
+.fan-message p {
+  font-size: 18px;
+  color: white;
+}
+
+.activities {
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.activities h3 {
+  margin-bottom: 10px;
+  color: #ffa0f4;
+}
+
+.activity-box {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #272526;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .aboutpage-main {
+    display: none;
+  }
+}

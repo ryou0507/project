@@ -1,0 +1,513 @@
+/**********　TOPへボタン　レイアウト　**********/
+.dli-chevron-up {
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(93%) rotate(-45deg);
+}
+
+.top > .btn,
+a.btn {
+  padding: 0.5rem 0.5rem;
+}
+
+a.back-to-top {
+  z-index: 1000;
+  position: fixed !important; /* ボタンを固定位置に設定 */
+  bottom: 20px !important; /* 画面下からの距離 */
+  right: 20px !important; /* 画面右からの距離 */
+  display: inline-block;
+  width: 50px; /* ボタンの幅を固定 */
+  height: 50px; /* ボタンの高さを固定 */
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50%; /* ボタンを正円にする */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  overflow: hidden; /* :after 要素がボタンからはみ出ないようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ボックスシャドウを追加 */
+  transition: background-color 0.3s ease; /* 背景色のトランジションを追加 */
+  text-align: center; /* テキストを中央揃えにする */
+  line-height: 50px; /* テキストを垂直方向に中央揃えにする */
+}
+
+a.back-to-top:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 50%; /* ボタンの丸みを継承 */
+}
+
+a.back-to-top span {
+  position: relative;
+  z-index: 100;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: white;
+  font-weight: bold;
+  line-height: 50px; /* テキストを垂直方向に中央揃えにする */
+}
+
+a.back-to-top:hover {
+  color: #fff;
+}
+
+a.back-to-top:hover:after {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  #top .btn {
+    font-size: clamp(1rem, -0.486rem + 3.1vw, 1.5rem);
+  }
+
+  a.back-to-top {
+    width: clamp(3.125rem, -1.589rem + 9.82vw, 4.25rem);
+    height: clamp(3.125rem, -1.589rem + 9.82vw, 4.25rem);
+  }
+}
+
+/**********　お問い合わせボタン　レイアウト　********/
+.btn,
+a.btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.1rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .pc-about-btn .btn,
+  .pc-about-btn a.btn {
+    font-size: 1.2rem;
+  }
+
+  .btn,
+  a.btn {
+    font-size: 1.5rem;
+  }
+
+  .pc-header-inquiry .btn {
+    font-size: 1rem;
+  }
+}
+
+a.header-inquiry-button {
+  font-weight: normal;
+  color: #fff;
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  border-radius: 100px;
+  left: -17px;
+  top: -17px;
+}
+
+a.header-inquiry-button:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 100px;
+}
+
+a.header-inquiry-button span {
+  position: relative;
+  z-index: 1;
+  font-size: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 1000;
+  top: -1px;
+}
+
+a.header-inquiry-button:hover {
+  color: #fff;
+}
+
+a.header-inquiry-button:hover:after {
+  opacity: 0;
+}
+
+/**********　ハンバーガーボタン　レイアウト　********/
+.header-left-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #272526;
+  position: relative;
+  z-index: 2; /* メニューより前面に表示 */
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 3; /* メニューより前面に表示 */
+}
+
+.header-left-line {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease; /* アニメーションを追加 */
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 37, 34, 0.98);
+  z-index: 1; /* ハンバーガーボタンの背面に表示 */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* メニューが非表示のときにクリックを無効にする */
+}
+
+.hamburger-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* メニューが表示されているときにクリックを有効にする */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+}
+
+.nav-links li {
+  margin: 20px 0;
+}
+
+.nav-links a {
+  letter-spacing: 1px;
+  font-size: 27px;
+  color: white; /* 透明に設定 */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  -webkit-text-stroke: 1.7px #dba2f7;
+}
+
+.hamburger-sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 420px;
+}
+
+.hamburger-X-icon {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin-right: 45px;
+}
+
+.hamburger-X-img {
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger-youtube-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger-youtube-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.hamburger.open .header-left-line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.open .header-left-line:nth-child(2) {
+  opacity: 0; /* 真ん中のラインを非表示 */
+}
+
+.hamburger.open .header-left-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/**********　こちらボタン　レイアウト　********/
+.btn-container {
+  text-align: center;
+  margin: 7% auto;
+}
+
+a.btn-gradient {
+  display: inline-block;
+  padding: 8px 10px; /* ボタンのパディングを調整 */
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50px; /* ボタンを丸みを帯びたデザインにする */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  position: relative; /* :after 要素のために position を追加 */
+  overflow: hidden; /* :after 要素がボタンからはみ出ないようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+}
+
+/* @media (min-width: 768px) {
+  a.btn-gradient {
+    padding: 1vw 8vw;
+  }
+} */
+
+a.btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 50px; /* ボタンの丸みを継承 */
+}
+
+a.btn-gradient span {
+  position: relative;
+  z-index: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+a.btn-gradient:hover {
+  color: #fff;
+}
+
+a.btn-gradient:hover:after {
+  opacity: 0;
+}
+
+/**********　こちらボタン(PC about)　レイアウト　********/
+.pc-about-btn-gradient {
+  display: inline-block;
+  padding: 8px 35px; /* ボタンのパディングを調整 */
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50px; /* ボタンを丸みを帯びたデザインにする */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  position: relative; /* :after 要素のために position を追加 */
+  overflow: hidden; /* :after 要素がボタンからはみ出ないようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+}
+
+/* @media (min-width: 768px) {
+  .pc-about-btn-gradient {
+    padding: 0.5rem 2rem !important;
+  }
+} */
+
+a.pc-about-btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 50px; /* ボタンの丸みを継承 */
+}
+
+a.pc-about-btn-gradient span {
+  position: relative;
+  z-index: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+a.pc-about-btn-gradient:hover {
+  color: #fff;
+}
+
+a.pc-about-btn-gradient:hover:after {
+  opacity: 0;
+}
+
+/**********　購入はコチラ　ボタン　*********/
+
+.goods-btn {
+  padding-bottom: 40px;
+}
+
+a.buy-btn-gradient {
+  display: inline-block;
+  padding: 8px 70px; /* ボタンのパディングを調整 */
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50px; /* ボタンを丸みを帯びたデザインにする */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  position: relative; /* :after 要素のために position を追加 */
+  overflow: hidden; /* :after 要素がボタンからはみ出ないようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+}
+
+a.buy-btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 50px; /* ボタンの丸みを継承 */
+}
+
+a.buy-btn-gradient span {
+  position: relative;
+  z-index: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+a.buy-btn-gradient:hover {
+  color: #fff;
+}
+
+a.buy-btn-gradient:hover:after {
+  opacity: 0;
+}
+
+.buy-btn,
+a.buy-btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.1rem 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .buy-btn,
+  a.buy-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 4rem;
+  }
+}
+/**　ここまで　**/
