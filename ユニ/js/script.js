@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  var element = document.getElementById('bg-video');
+  if (element) {
+    element.addEventListener('event', functionToHandle);
+  }
+});
+
 /**********　ヘッダー固定アニメーション　**********/
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -529,5 +536,40 @@ $(document).ready(function () {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     lazyLoad: 'progressive',
+  });
+});
+
+/*********** works スクロール *********/
+document.addEventListener('DOMContentLoaded', function () {
+  const containers = document.querySelectorAll('.works-page-container');
+  containers.forEach((container) => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      container.classList.add('active');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 3; //scroll-fast
+      container.scrollLeft = scrollLeft - walk;
+    });
   });
 });

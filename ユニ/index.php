@@ -13,7 +13,6 @@
  * @package Your_Theme_Name
  */
 
-get_header(); // ヘッダーの読み込み
 ?>
 
 <div class="firstview-container">
@@ -32,6 +31,8 @@ get_header(); // ヘッダーの読み込み
 </div>
 
 
+<?php get_header(); // ヘッダーの読み込み 
+?>
 
 <!--スマホ用about-->
 <section class="about-section">

@@ -116,7 +116,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -267,7 +267,7 @@ select {
     left: 0;
     width: 100%;
     height: 100%;
-    content: "";
+    content: '';
     transition: all 0.5s;
     background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
     border-radius: 100px;
@@ -277,7 +277,7 @@ select {
     position: relative;
     z-index: 1;
     font-size: 1.1em;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: 1000;
     top: 8px;
   }
@@ -355,7 +355,7 @@ select {
   align-items: center;
   overflow: hidden;
   position: relative;
-  top: 19px;
+  top: 18px;
   left: -107px;
 }
 
@@ -383,7 +383,7 @@ select {
   height: auto;
   width: 100%;
   overflow: hidden;
-  margin-top: 61px;
+  margin-top: 50px;
   background-color: #000;
   z-index: 99;
 }
@@ -391,7 +391,7 @@ select {
 .firstview-video {
   position: relative;
   width: 102%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -405,7 +405,7 @@ select {
 
 .firstview-content {
   position: absolute;
-  top: 54%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -484,7 +484,7 @@ inview
   color: #000; /* 透明に設定 */
   margin-bottom: 10px;
   position: relative;
-  font-family: "Rampart One", sans-serif;
+  font-family: 'Rampart One', sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
@@ -493,7 +493,7 @@ inview
 
 /* タイトル下の線のスタイル */
 .top-h2::after {
-  content: "";
+  content: '';
   display: block;
   width: 97%; /* 線の幅を調整可能に */
   margin: 10px 0 10% 0;
@@ -512,7 +512,7 @@ inview
 .about-section {
   padding: 20px;
   background-color: #000; /* 背景色を黒に設定 */
-  font-family: "Hachi Maru Pop", cursive;
+  font-family: 'Hachi Maru Pop', cursive;
   display: block;
 }
 
@@ -658,7 +658,7 @@ inview
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-right: 55px;
 }
 
@@ -703,7 +703,7 @@ inview
 .pc-about-section {
   padding: 20px;
   background-color: #000;
-  font-family: "Hachi Maru Pop", cursive;
+  font-family: 'Hachi Maru Pop', cursive;
   display: none;
 }
 
@@ -947,14 +947,14 @@ inview
   padding: 5px 10px;
   border-radius: 20px;
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .news-title {
   margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .news-title a {
@@ -964,7 +964,7 @@ inview
 }
 
 .news-title a::after {
-  content: ""; /* 擬似要素の内容は空 */
+  content: ''; /* 擬似要素の内容は空 */
   display: block;
   width: 100%; /* 下線の幅をリンクテキストと同じにする */
   height: 1px; /* 下線の太さ */
@@ -986,7 +986,12 @@ inview
   margin-top: 10px;
   font-size: 16px;
   color: #ffffff;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.no-news {
+  color: white;
+  text-align: center;
 }
 
 .pagination {
@@ -1029,14 +1034,14 @@ inview
     font-size: clamp(1rem, 0.714rem + 0.6vw, 1.25rem);
   }
 
-  .news-content {
+  .news-content, .no-news {
     font-size: clamp(0.75rem, 0.464rem + 0.6vw, 1rem);
   }
 
   div#news-container {
     width: 70%;
     margin: 0 auto 10% auto;
-  }
+}
 }
 
 /**********　single-news レイアウト　**********/
@@ -1105,7 +1110,7 @@ inview
 
 .goods-item {
   text-align: center; /* テキストを中央揃えに設定 */
-  font-family: "Hachi Maru Pop", cursive;
+  font-family: 'Hachi Maru Pop', cursive;
   font-weight: 400;
   font-style: normal;
   position: relative; /* 子要素の位置を相対的にするために追加 */
@@ -1204,7 +1209,7 @@ inview
 /* 各アイテムのスタイル */
 .work-item {
   text-align: center; /* テキストを中央揃えに設定 */
-  font-family: "Noto Sans JP", sans-serif; /* フォントをNoto Sans JPに設定 */
+  font-family: 'Noto Sans JP', sans-serif; /* フォントをNoto Sans JPに設定 */
 }
 
 /* image-containerの基本スタイル */
@@ -1301,7 +1306,7 @@ inview
   padding-top: 80px;
   margin-bottom: 10px;
   position: relative;
-  font-family: "Rampart One", sans-serif;
+  font-family: 'Rampart One', sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
@@ -1352,6 +1357,76 @@ inview
   }
 }
 
+/**********　worksページ　レイアウト　**********/
+.works-page-section {
+  background-color: #000;
+}
+
+.works-content p {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #dba2f7, -1px -1px 0 #dba2f7, -1px 1px 0 #dba2f7,
+    1px -1px 0 #dba2f7, 0px 1px 0 #dba2f7, 0-1px 0 #dba2f7, -1px 0 0 #dba2f7,
+    1px 0 0 #dba2f7;
+  font-family: 'Hachi Maru Pop', cursive;
+  color: white;
+  }
+
+  .works-page-container {
+    display: flex;
+    flex-wrap: nowrap; /* 子要素を横並びにします */
+    overflow: hidden; /* コンテナ全体のオーバーフローを隠します */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15%;
+  }
+  
+  .works-item {
+    display: flex;
+    flex-direction: row; /* 横並びに配置 */
+    flex-wrap: nowrap; /* 折り返しを防止 */
+    overflow-x: auto; /* 横スクロールを有効に */
+    scrollbar-width: none; /* Firefox対応のスクロールバー非表示 */
+    -ms-overflow-style: none; /* Internet Explorer対応のスクロールバー非表示 */
+    width: 100%; /* 親コンテナの幅に合わせる */
+    background-color: white;
+    border: 2px solid #dba2f7; /* 枠の色を紫に設定 */
+    border-radius: 15px; /* 角を丸く設定 */
+    margin: 0 10%;
+  }
+  
+  .works-item::-webkit-scrollbar {
+    display: none; /* WebKitブラウザ（例: Chrome, Safari）のスクロールバーを非表示 */
+  }
+  
+  a.works-thumbnail {
+    flex: 0 0 auto; /* 固定幅を設定 */
+    max-width: calc(100% / 3); /* 横に3つ並ぶように幅を設定 */
+    max-height: 150px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* はみ出た部分を隠す */
+    margin: 8px; /* アイテム間のマージンを設定 */
+    object-fit: contain;
+  }
+  
+  .works-page-image {
+    max-width: 100%; /* 画像の幅を100%に設定 */
+    max-height: 100%;
+    display: block;
+    object-fit: cover; /* 画像の比率を保ちながら、コンテナに合わせて切り取り */
+  }
+
+
+
+
+
+
+
+
 /**********　フッター　レイアウト　**********/
 .footer-container {
   display: flex;
@@ -1372,7 +1447,7 @@ inview
   padding-left: 72px; /* 点が見えるように左にスペースを追加 */
   margin: 0;
   color: #fff; /* テキストの色を白に設定 */
-  font-family: "Noto Sans JP", sans-serif; /* フォントをNoto Sans JPに設定 */
+  font-family: 'Noto Sans JP', sans-serif; /* フォントをNoto Sans JPに設定 */
 }
 
 .footer-nav li {
@@ -1386,7 +1461,7 @@ inview
 }
 
 .footer-nav li::before {
-  content: "•"; /* リスト項目の点を追加 */
+  content: '•'; /* リスト項目の点を追加 */
   color: #fff; /* 点の色を白に設定 */
   -webkit-text-stroke: 1px #dba2f7; /* テキストの輪郭を設定 */
   position: absolute;

@@ -138,7 +138,7 @@ function custom_news_list_content($paged, $posts_per_page)
         ));
         echo '</div>';
     } else {
-        echo '<p>お知らせはまだありません。</p>';
+        echo '<p class="no-news">お知らせはまだありません。</p>';
     }
     wp_reset_postdata();
 }
@@ -161,7 +161,129 @@ if (function_exists('add_theme_support')) {
 }
 ?>
 
+<?php
+//　webp画像の追加
+function custom_mime_types($mimes)
+{
+    $mimes['webp'] = 'image/webp';
+    return $mimes;
+}
+add_filter('upload_mimes', 'custom_mime_types');
+
+?>
 
 
+<?php
+if (function_exists('add_theme_support')) {
+    add_theme_support('post-thumbnails');
+}
+?>
 
 
+<?php
+// カスタム投稿タイプ Works を作成
+function create_post_type_works()
+{
+    register_post_type(
+        'works',
+        array(
+            'labels' => array(
+                'name' => __('Works'),
+                'singular_name' => __('Work'),
+                'add_new' => __('Add New Work'),
+                'add_new_item' => __('Add New Work'),
+                'edit_item' => __('Edit Work'),
+                'new_item' => __('New Work'),
+                'view_item' => __('View Work'),
+                'search_items' => __('Search Works'),
+                'not_found' => __('No works found'),
+                'not_found_in_trash' => __('No works found in Trash'),
+                'all_items' => __('All Works'),
+                'archives' => __('Work Archives'),
+                'insert_into_item' => __('Insert into work'),
+                'uploaded_to_this_item' => __('Uploaded to this work'),
+                'featured_image' => __('Featured Image'),
+                'set_featured_image' => __('Set featured image'),
+                'remove_featured_image' => __('Remove featured image'),
+                'use_featured_image' => __('Use as featured image'),
+                'menu_name' => __('Works'),
+                'filter_items_list' => __('Filter works list'),
+                'items_list_navigation' => __('Works list navigation'),
+                'items_list' => __('Works list'),
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'works'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
+            'show_in_rest' => true, // Gutenbergエディタを使う場合は、trueにします。
+            'taxonomies' => array('category'), // カテゴリーをサポート
+        )
+    );
+}
+add_action('init', 'create_post_type_works');
+
+// カスタムフィールドから追加画像を取得する関数
+function get_additional_images($post_id)
+{
+    $images = array();
+    for ($i = 1; $i <= 5; $i++) { // 最大5枚の追加画像を想定
+        $image_url = get_post_meta($post_id, 'additional_image_' . $i, true);
+        if ($image_url) {
+            $images[] = $image_url;
+        }
+    }
+    return $images;
+}
+
+// カテゴリーごとの投稿を表示するショートコード
+function display_works_by_category($atts)
+{
+    $atts = shortcode_atts(
+        array(
+            'category' => '', // カテゴリーのスラッグを指定
+            'category_name' => '' // カテゴリーの表示名を指定
+        ),
+        $atts,
+        'works_category'
+    );
+
+    $query_args = array(
+        'posts_per_page' => -1,
+        'post_type' => 'works',
+        'category_name' => $atts['category']
+    );
+
+    $works_query = new WP_Query($query_args);
+    ob_start();
+
+    if ($works_query->have_posts()) {
+        while ($works_query->have_posts()) {
+            $works_query->the_post();
+?>
+            <div class="works-item">
+                <?php if (has_post_thumbnail()) : ?>
+                    <a href="<?php the_permalink(); ?>" class="works-thumbnail">
+                    </a>
+                <?php endif; ?>
+
+                <?php
+                $additional_images = get_additional_images(get_the_ID());
+                if (!empty($additional_images)) {
+                    foreach ($additional_images as $image_url) : ?>
+                        <a href="<?php the_permalink(); ?>" class="works-thumbnail">
+                            <img src="<?php echo esc_url($image_url); ?>" class="works-page-image" />
+                        </a>
+                <?php endforeach;
+                }
+                ?>
+            </div>
+<?php
+        }
+    } else {
+        echo '<p>No posts found in ' . esc_html($atts['category']) . ' category.</p>';
+    }
+    wp_reset_postdata();
+
+    return ob_get_clean();
+}
+add_shortcode('works_category', 'display_works_by_category');
