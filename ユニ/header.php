@@ -46,12 +46,12 @@ function getCurrentUrl()
                         <div class="hamburger-sns">
                             <div class="hamburger-X-icon">
                                 <a href="https://x.com/P_yun1">
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="" class="hamburger-X-img" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="X icon" class="hamburger-X-img" />
                                 </a>
                             </div>
                             <div class="hamburger-youtube-icon">
                                 <a href="https://www.youtube.com/@CrisYuni">
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="" class="hamburger-youtube-img" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="youtube icon" class="hamburger-youtube-img" />
                                 </a>
                             </div>
                         </div>
@@ -62,12 +62,12 @@ function getCurrentUrl()
                 <div class="header-sns">
                     <div class="header-X-icon">
                         <a href="https://x.com/P_yun1">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="" class="header-X-img" />
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="X icon" class="header-X-img" />
                         </a>
                     </div>
                     <div class="header-youtube-icon">
                         <a href="https://www.youtube.com/@CrisYuni">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="" class="header-youtube-img" />
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="youtube icon" class="header-youtube-img" />
                         </a>
                     </div>
                 </div>

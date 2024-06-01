@@ -25,7 +25,7 @@
   </div>
   <div class="firstview-content">
     <h1>
-      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-logo.webp" alt="" class="firstview-logo" />
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-logo.webp" alt="栗栖ユニロゴ" class="firstview-logo" />
     </h1>
   </div>
 </div>
@@ -39,8 +39,8 @@
   <h2 class="top-h2 inview fadeIn_right">ABOUT</h2>
   <div class="mobile-about">
     <div class="heart-container">
-      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-about-item2-phone.webp" alt="" class="heart inview" />
-      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-about-item1-phone.webp" alt="" class="illust" />
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-about-item2-phone.webp" alt="ハート" class="heart inview" />
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-01.webp" alt="栗栖ユニイメージキャラクター" class="illust" />
       <div class="profile">
         <div class="kana slideConts txt1">Cris Yuni</div>
         <div class="name slideConts txt2">栗栖ユニ</div>
@@ -88,10 +88,11 @@
         </div>
 
         <div class="btn-container">
-          <a href="" class="btn btn-gradient"><span>詳細はこちら</span></a>
+          <a href="<?php echo home_url('about'); ?>" class="btn btn-gradient"><span>詳細はこちら</span></a>
         </div>
       </div>
     </div>
+  </div>
 </section>
 
 <!--PC用about-->
@@ -128,21 +129,21 @@
         <div class="pc-about-sns inview is-show">
           <div class="pc-about-X-icon">
             <a href="https://x.com/P_yun1">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="" class="pc-about-X-img" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="X icon" class="pc-about-X-img" />
             </a>
           </div>
           <div class="pc-about-youtube-icon">
             <a href="https://www.youtube.com/@CrisYuni">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="" class="pc-about-youtube-img" />
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="youtube icon" class="pc-about-youtube-img" />
             </a>
           </div>
         </div>
         <div class="btn-container pc-about-btn">
-          <a href="" class="btn pc-about-btn-gradient"><span>詳細はこちら</span></a>
+          <a href="<?php echo home_url('about'); ?>" class="btn pc-about-btn-gradient"><span>詳細はこちら</span></a>
         </div>
       </div>
       <div class="pc-about-image-box">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-pc-about.webp" alt="ハート" class="pc-about-image" />
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-pc-about.webp" alt="ハートと2種類の栗栖ユニイメージキャラクター" class="pc-about-image" />
       </div>
     </div>
   </div>
@@ -154,7 +155,7 @@
     <iframe class="responsive-iframe" width="100%" height="300" src="<?php echo 'https://www.youtube.com/embed/2qj9a4aGqAY?si=z__UwxYvKxxQz3t-'; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
   <div class="btn-container">
-    <a href="" class="btn btn-gradient"><span>チャンネル登録はこちら</span></a>
+    <a href="https://www.youtube.com/@CrisYuni" class="btn btn-gradient"><span>チャンネル登録はこちら</span></a>
   </div>
 </section>
 
@@ -169,39 +170,39 @@
   <div class="goods-container">
     <div class="goods-item slide-in leftAnimeSlow">
       <div class="image-container slider inview">
-        <img class="slider-item slider-item01" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item1.webp" alt="サンプル1" />
-        <img class="slider-item slider-item01" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item1.webp" />
+        <img class="slider-item slider-item01" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item1.webp" alt="ユニてゃクッション1" />
+        <img class="slider-item slider-item01" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item1.webp" alt="ユニてゃクッション2" />
       </div>
       <p class="slide-in_inner leftAnimeInner">ユニてゃクッション</p>
       <p class="price slide-in_inner leftAnimeInner">￥4,500−</p>
     </div>
     <div class="goods-item slide-in leftAnimeSlow">
       <div class="image-container slider inview">
-        <img class="slider-item slider-item02" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item2.webp" alt="サンプル2" />
-        <img class="slider-item slider-item02" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item2.webp" />
+        <img class="slider-item slider-item02" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item2.webp" alt="ユニてゃシール1" />
+        <img class="slider-item slider-item02" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item2.webp" alt="ユニてゃシール2" />
       </div>
       <p class="slide-in_inner leftAnimeInner">ユニてゃシール</p>
       <p class="price slide-in_inner leftAnimeInner">￥700−</p>
     </div>
     <div class="goods-item slide-in leftAnimeSlow">
       <div class="image-container slider inview">
-        <img class="slider-item slider-item03" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item3.webp" alt="サンプル3" />
-        <img class="slider-item slider-item03" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item3.webp" />
+        <img class="slider-item slider-item03" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item3.webp" alt="ユニてゃ抱き枕1" />
+        <img class="slider-item slider-item03" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item3.webp" alt="ユニてゃ抱き枕2" />
       </div>
       <p class="slide-in_inner leftAnimeInner">ユニてゃ抱き枕</p>
       <p class="price slide-in_inner leftAnimeInner">￥10,080−</p>
     </div>
     <div class="goods-item slide-in leftAnimeSlow">
       <div class="image-container slider inview">
-        <img class="slider-item slider-item04" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item4.webp" alt="サンプル4" />
-        <img class="slider-item slider-item04" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item4.webp" />
+        <img class="slider-item slider-item04" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item4.webp" alt="ユニてゃアクスタ1" />
+        <img class="slider-item slider-item04" data-lazy="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-goods-item4.webp" alt="ユニてゃアクスタ2" />
       </div>
       <p class="slide-in_inner leftAnimeInner">ユニてゃアクスタ</p>
       <p class="price slide-in_inner leftAnimeInner">￥1,430−</p>
     </div>
   </div>
   <div class="btn-container">
-    <a href="" class="btn btn-gradient no-delay"><span>グッズ一覧はこちら</span></a>
+    <a href="<?php echo home_url('goods'); ?>" class="btn btn-gradient no-delay"><span>グッズ一覧はこちら</span></a>
   </div>
 </section>
 
@@ -210,35 +211,35 @@
   <div class="works-container">
     <div class="work-item slide-in leftAnimeSlow">
       <div class="image-container inview">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item1.webp" alt="サンプル1" />
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item1.webp" alt="栗栖ユニ実績1" />
       </div>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
     </div>
     <div class="work-item slide-in leftAnimeSlow">
       <div class="image-container inview">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item2.webp" alt="サンプル2" />
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item2.webp" alt="栗栖ユニ実績2" />
       </div>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
     </div>
     <div class="work-item slide-in leftAnimeSlow">
       <div class="image-container inview">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item3.webp" alt="サンプル3" />
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item3.webp" alt="栗栖ユニ実績3" />
       </div>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
     </div>
     <div class="work-item slide-in leftAnimeSlow">
       <div class="image-container inview">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item4.webp" alt="サンプル4" />
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-works-item4.webp" alt="栗栖ユニ実績4" />
       </div>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
       <p class="slide-in_inner leftAnimeInner">サンプル</p>
     </div>
   </div>
   <div class="btn-container">
-    <a href="" class="btn btn-gradient"><span>実績一覧はこちら</span></a>
+    <a href="<?php echo home_url('works'); ?>" class="btn btn-gradient"><span>実績一覧はこちら</span></a>
   </div>
 </section>
 

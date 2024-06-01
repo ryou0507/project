@@ -7,7 +7,7 @@ get_header(); // ヘッダーの読み込み
 
 <main>
     <section class="works-page-section">
-        <h2 class="center-h2 inview">WORKS</h2>
+        <h1 class="center-h1 inview">WORKS</h1>
         <div class="works-content">
             <section id="new-works">
                 <p>New</p>

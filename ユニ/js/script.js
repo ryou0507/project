@@ -4,13 +4,13 @@
 // });
 
 /**********　ファーストビュー　動画　再生箇所指定　**********/
-document.addEventListener('DOMContentLoaded', function () {
-  var video = document.getElementById('bg-video');
+document.addEventListener("DOMContentLoaded", function () {
+  var video = document.getElementById("bg-video");
   var loopStart = 8; // 8秒からリピート開始
   var loopEnd = 20; // 20秒でリピート終了
   var initialPlay = true;
 
-  video.addEventListener('timeupdate', function () {
+  video.addEventListener("timeupdate", function () {
     if (initialPlay && video.currentTime >= loopEnd) {
       initialPlay = false;
       video.currentTime = loopStart;
@@ -21,54 +21,52 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  var element = document.getElementById('bg-video');
+document.addEventListener("DOMContentLoaded", function () {
+  var element = document.getElementById("bg-video");
   if (element) {
-    element.addEventListener('event', functionToHandle);
+    element.addEventListener("event", functionToHandle);
   }
 });
 
-/**********　ヘッダー固定アニメーション　**********/
-
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.getElementById('pc-header');
-  const firstview = document.querySelector('.firstview-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.getElementById("pc-header");
+  const firstview = document.querySelector(".firstview-container");
   const headerOffsetTop = header.offsetTop;
 
   function checkHeaderPosition() {
     const scrollTop = window.scrollY;
-    const firstviewHeight = firstview.offsetHeight;
+    const firstviewHeight = firstview ? firstview.offsetHeight : 0; // firstviewが存在しない場合に0を設定
 
     if (scrollTop > firstviewHeight) {
-      if (!header.classList.contains('fixed')) {
-        header.classList.add('fixed');
+      if (!header.classList.contains("fixed")) {
+        header.classList.add("fixed");
       }
     } else {
-      if (header.classList.contains('fixed')) {
-        header.classList.remove('fixed');
+      if (header.classList.contains("fixed")) {
+        header.classList.remove("fixed");
       }
     }
   }
 
-  window.addEventListener('scroll', checkHeaderPosition);
-  window.addEventListener('resize', checkHeaderPosition);
+  window.addEventListener("scroll", checkHeaderPosition);
+  window.addEventListener("resize", checkHeaderPosition);
   checkHeaderPosition(); // 初回実行
 });
 
 /**********　ハンバーガーボタン　**********/
-document.addEventListener('DOMContentLoaded', function () {
-  var hamburger = document.getElementById('hamburger');
-  var hamburgerMenu = document.querySelector('.hamburger-menu');
+document.addEventListener("DOMContentLoaded", function () {
+  var hamburger = document.getElementById("hamburger");
+  var hamburgerMenu = document.querySelector(".hamburger-menu");
 
-  hamburger.addEventListener('click', function () {
-    hamburgerMenu.classList.toggle('show');
-    hamburger.classList.toggle('open');
+  hamburger.addEventListener("click", function () {
+    hamburgerMenu.classList.toggle("show");
+    hamburger.classList.toggle("open");
 
     // ボディのスクロールを制御
-    if (hamburgerMenu.classList.contains('show')) {
-      document.body.style.overflow = 'hidden'; // メニュー表示中はスクロール禁止
+    if (hamburgerMenu.classList.contains("show")) {
+      document.body.style.overflow = "hidden"; // メニュー表示中はスクロール禁止
     } else {
-      document.body.style.overflow = ''; // メニュー非表示時はスクロール許可
+      document.body.style.overflow = ""; // メニュー非表示時はスクロール許可
     }
   });
 });
@@ -94,9 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
         elementBottomPosition >= windowTopPosition &&
         elementTopPosition <= windowBottomPosition
       ) {
-        $element.trigger('inview', [true]);
+        $element.trigger("inview", [true]);
       } else {
-        $element.trigger('inview', [false]);
+        $element.trigger("inview", [false]);
       }
     });
   }
@@ -106,18 +104,18 @@ document.addEventListener('DOMContentLoaded', function () {
     return this;
   };
 
-  $window.on('scroll resize', checkInView);
-  $window.trigger('scroll');
+  $window.on("scroll resize", checkInView);
+  $window.trigger("scroll");
 })(jQuery);
 
 /**********　スマホ　ABOUT　imgアニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.inview')
+  $(".inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       }
     });
 
@@ -128,49 +126,49 @@ $(function () {
     // スクロールした量を取得
     const wScroll = $(window).scrollTop();
     // それぞれのblockクラスに対して…
-    $('.block').each(function () {
+    $(".block").each(function () {
       // それぞれのblockクラスのウィンドウからの高さを取得
       const bPosition = $(this).offset().top;
       // スクロールした量が要素の高さを上回ったら
       // その数値にウィンドウの高さを引き、最後に200pxを足す
       if (wScroll > bPosition - wHeight + 200) {
-        $(this).addClass('fadeIn');
+        $(this).addClass("fadeIn");
       }
     });
     // YouTube動画コンテナに対して同じ処理を適用
-    const yPosition = $('.illust').offset().top;
+    const yPosition = $(".illust").offset().top;
     if (wScroll > yPosition - wHeight + 200) {
-      $('.illust').addClass('fadeIn');
+      $(".illust").addClass("fadeIn");
     }
   });
 });
 
 /**********　スマホ　about　テキスト　アニメーション　***********/
 function BlurTextAnimeControl() {
-  $('.slideConts').each(function () {
+  $(".slideConts").each(function () {
     var elemPos = $(this).offset().top - 50;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight) {
-      $(this).addClass('slide');
+      $(this).addClass("slide");
     } else {
-      $(this).removeClass('slide');
+      $(this).removeClass("slide");
     }
   });
 }
 
-$(window).on('load scroll', function () {
+$(window).on("load scroll", function () {
   BlurTextAnimeControl();
 });
 
 /**********　PC　ABOUT　imgアニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.inview')
+  $(".inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       }
     });
 
@@ -181,19 +179,19 @@ $(function () {
     // スクロールした量を取得
     const wScroll = $(window).scrollTop();
     // それぞれのblockクラスに対して…
-    $('.block').each(function () {
+    $(".block").each(function () {
       // それぞれのblockクラスのウィンドウからの高さを取得
       const bPosition = $(this).offset().top;
       // スクロールした量が要素の高さを上回ったら
       // その数値にウィンドウの高さを引き、最後に200pxを足す
       if (wScroll > bPosition - wHeight + 200) {
-        $(this).addClass('fadeIn');
+        $(this).addClass("fadeIn");
       }
     });
     // YouTube動画コンテナに対して同じ処理を適用
-    const yPosition = $('.pc-about-image-box').offset().top;
+    const yPosition = $(".pc-about-image-box").offset().top;
     if (wScroll > yPosition - wHeight + 200) {
-      $('.pc-about-image-box').addClass('fadeIn');
+      $(".pc-about-image-box").addClass("fadeIn");
     }
   });
 });
@@ -201,11 +199,11 @@ $(function () {
 /**********　MOVIE　アニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.inview')
+  $(".inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       }
     });
 
@@ -216,19 +214,19 @@ $(function () {
     // スクロールした量を取得
     const wScroll = $(window).scrollTop();
     // それぞれのblockクラスに対して…
-    $('.block').each(function () {
+    $(".block").each(function () {
       // それぞれのblockクラスのウィンドウからの高さを取得
       const bPosition = $(this).offset().top;
       // スクロールした量が要素の高さを上回ったら
       // その数値にウィンドウの高さを引き、最後に200pxを足す
       if (wScroll > bPosition - wHeight + 200) {
-        $(this).addClass('fadeIn');
+        $(this).addClass("fadeIn");
       }
     });
     // YouTube動画コンテナに対して同じ処理を適用
-    const yPosition = $('.youtube-container').offset().top;
+    const yPosition = $(".youtube-container").offset().top;
     if (wScroll > yPosition - wHeight + 200) {
-      $('.youtube-container').addClass('fadeIn');
+      $(".youtube-container").addClass("fadeIn");
     }
   });
 });
@@ -236,13 +234,13 @@ $(function () {
 /**********　image-container　アニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.image-container.inview')
+  $(".image-container.inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       } else {
-        $(this).removeClass('is-show');
+        $(this).removeClass("is-show");
       }
     });
 });
@@ -250,13 +248,13 @@ $(function () {
 /**********　スマホ ABOUT sns-icon　アニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.about-sns.inview')
+  $(".about-sns.inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       } else {
-        $(this).removeClass('is-show');
+        $(this).removeClass("is-show");
       }
     });
 });
@@ -264,13 +262,13 @@ $(function () {
 /**********　PC ABOUT sns-icon　アニメーション　**********/
 $(function () {
   // inviewイベントの設定
-  $('.pc-about-sns.inview')
+  $(".pc-about-sns.inview")
     .inView()
-    .on('inview', function (event, isInView) {
+    .on("inview", function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        $(this).addClass("is-show").off("inview"); // 一度だけクラスを追加し、その後イベントをオフにする
       } else {
-        $(this).removeClass('is-show');
+        $(this).removeClass("is-show");
       }
     });
 });
@@ -278,9 +276,9 @@ $(function () {
 /**********　3つ共通　**********/
 function wrapTextWithSpan(element) {
   let text = element.textContent;
-  let wrappedText = '';
+  let wrappedText = "";
   for (let char of text) {
-    if (char.trim() !== '') {
+    if (char.trim() !== "") {
       wrappedText += `<span class="char">${char}</span>`;
     } else {
       wrappedText += char;
@@ -291,15 +289,15 @@ function wrapTextWithSpan(element) {
 
 /**********　PC ABOUT テキスト　アニメーション　**********/
 function applyAnimationToPcAboutSection() {
-  const section = document.querySelector('.pc-about-section');
-  const elements = section.querySelectorAll('.leftAnimeInner');
+  const section = document.querySelector(".pc-about-section");
+  const elements = section.querySelectorAll(".leftAnimeInner");
   const charDelay = 25; // 文字ごとのディレイを25msに設定
   let totalDelay = 0;
 
   elements.forEach((element) => {
     wrapTextWithSpan(element);
 
-    const chars = element.querySelectorAll('.char');
+    const chars = element.querySelectorAll(".char");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -307,7 +305,7 @@ function applyAnimationToPcAboutSection() {
             setTimeout(() => {
               chars.forEach((char, charIndex) => {
                 setTimeout(() => {
-                  char.classList.add('visible');
+                  char.classList.add("visible");
                 }, charIndex * charDelay);
               });
             }, totalDelay);
@@ -324,13 +322,13 @@ function applyAnimationToPcAboutSection() {
 }
 
 function applySlideAnimeToPcAboutSection() {
-  const section = document.querySelector('.pc-about-section');
-  const elements = section.querySelectorAll('.leftAnime');
+  const section = document.querySelector(".pc-about-section");
+  const elements = section.querySelectorAll(".leftAnime");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRight');
+          entry.target.classList.add("slideAnimeLeftRight");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -344,13 +342,13 @@ function applySlideAnimeToPcAboutSection() {
 }
 
 function applySlideAnimeSlowToPcAboutSection() {
-  const section = document.querySelector('.pc-about-section');
-  const elements = section.querySelectorAll('.leftAnimeSlow');
+  const section = document.querySelector(".pc-about-section");
+  const elements = section.querySelectorAll(".leftAnimeSlow");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRightSlow');
+          entry.target.classList.add("slideAnimeLeftRightSlow");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -365,21 +363,21 @@ function applySlideAnimeSlowToPcAboutSection() {
 
 /**********　goods テキスト　アニメーション　***********/
 function applyAnimationToGoodsSection() {
-  const section = document.querySelector('.goods-section');
-  const elements = section.querySelectorAll('.leftAnimeInner');
+  const section = document.querySelector(".goods-section");
+  const elements = section.querySelectorAll(".leftAnimeInner");
   const charDelay = 25; // 文字ごとのディレイを25msに設定
 
   elements.forEach((element) => {
     wrapTextWithSpan(element);
 
-    const chars = element.querySelectorAll('.char');
+    const chars = element.querySelectorAll(".char");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             chars.forEach((char, charIndex) => {
               setTimeout(() => {
-                char.classList.add('visible');
+                char.classList.add("visible");
               }, charIndex * charDelay);
             });
             observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
@@ -394,13 +392,13 @@ function applyAnimationToGoodsSection() {
 }
 
 function applySlideAnimeToGoodsSection() {
-  const section = document.querySelector('.goods-section');
-  const elements = section.querySelectorAll('.leftAnime');
+  const section = document.querySelector(".goods-section");
+  const elements = section.querySelectorAll(".leftAnime");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRight');
+          entry.target.classList.add("slideAnimeLeftRight");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -414,13 +412,13 @@ function applySlideAnimeToGoodsSection() {
 }
 
 function applySlideAnimeSlowToGoodsSection() {
-  const section = document.querySelector('.goods-section');
-  const elements = section.querySelectorAll('.leftAnimeSlow');
+  const section = document.querySelector(".goods-section");
+  const elements = section.querySelectorAll(".leftAnimeSlow");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRightSlow');
+          entry.target.classList.add("slideAnimeLeftRightSlow");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -435,21 +433,21 @@ function applySlideAnimeSlowToGoodsSection() {
 
 /**********　works　テキスト　アニメーション　**********/
 function applyAnimationToWorksSection() {
-  const section = document.querySelector('.works-section');
-  const elements = section.querySelectorAll('.leftAnimeInner');
+  const section = document.querySelector(".works-section");
+  const elements = section.querySelectorAll(".leftAnimeInner");
   const charDelay = 25; // 文字ごとのディレイを25msに設定
 
   elements.forEach((element) => {
     wrapTextWithSpan(element);
 
-    const chars = element.querySelectorAll('.char');
+    const chars = element.querySelectorAll(".char");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             chars.forEach((char, charIndex) => {
               setTimeout(() => {
-                char.classList.add('visible');
+                char.classList.add("visible");
               }, charIndex * charDelay);
             });
             observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
@@ -464,13 +462,13 @@ function applyAnimationToWorksSection() {
 }
 
 function applySlideAnimeToWorksSection() {
-  const section = document.querySelector('.works-section');
-  const elements = section.querySelectorAll('.leftAnime');
+  const section = document.querySelector(".works-section");
+  const elements = section.querySelectorAll(".leftAnime");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRight');
+          entry.target.classList.add("slideAnimeLeftRight");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -484,13 +482,13 @@ function applySlideAnimeToWorksSection() {
 }
 
 function applySlideAnimeSlowToWorksSection() {
-  const section = document.querySelector('.works-section');
-  const elements = section.querySelectorAll('.leftAnimeSlow');
+  const section = document.querySelector(".works-section");
+  const elements = section.querySelectorAll(".leftAnimeSlow");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('slideAnimeLeftRightSlow');
+          entry.target.classList.add("slideAnimeLeftRightSlow");
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
       });
@@ -522,7 +520,7 @@ window.onload = function () {
 
 /*********** goods スクロール *********/
 $(document).ready(function () {
-  $('.slider').slick({
+  $(".slider").slick({
     autoplay: false, // 自動再生を無効にする
     speed: 1000,
     infinite: true,
@@ -535,41 +533,81 @@ $(document).ready(function () {
     pauseOnFocus: false,
     pauseOnHover: false,
     pauseOnDotsHover: false,
-    lazyLoad: 'progressive',
+    lazyLoad: "progressive",
   });
 });
 
 /*********** works スクロール *********/
-document.addEventListener('DOMContentLoaded', function () {
-  const containers = document.querySelectorAll('.works-page-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const containers = document.querySelectorAll(".works-page-container");
   containers.forEach((container) => {
     let isDown = false;
     let startX;
     let scrollLeft;
 
-    container.addEventListener('mousedown', (e) => {
+    container.addEventListener("mousedown", (e) => {
       isDown = true;
-      container.classList.add('active');
+      container.classList.add("active");
       startX = e.pageX - container.offsetLeft;
       scrollLeft = container.scrollLeft;
     });
 
-    container.addEventListener('mouseleave', () => {
+    container.addEventListener("mouseleave", () => {
       isDown = false;
-      container.classList.remove('active');
+      container.classList.remove("active");
     });
 
-    container.addEventListener('mouseup', () => {
+    container.addEventListener("mouseup", () => {
       isDown = false;
-      container.classList.remove('active');
+      container.classList.remove("active");
     });
 
-    container.addEventListener('mousemove', (e) => {
+    container.addEventListener("mousemove", (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - container.offsetLeft;
       const walk = (x - startX) * 3; //scroll-fast
       container.scrollLeft = scrollLeft - walk;
     });
+  });
+});
+
+/*********** aboutページ スクロール *********/
+jQuery(document).ready(function ($) {
+  function initializeSliders() {
+    // スマホ用スライダー
+    if (!$(".aboutpage-main .character-slider").hasClass("slick-initialized")) {
+      $(".aboutpage-main .character-slider").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '<button class="slick-prev">Previous</button>',
+        nextArrow: '<button class="slick-next">Next</button>',
+      });
+    }
+
+    // PC用スライダー
+    if (
+      $(window).width() >= 768 &&
+      !$(".aboutpage-main-PC .character-slider").hasClass("slick-initialized")
+    ) {
+      $(".aboutpage-main-PC .character-slider").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '<button class="slick-prev">Previous</button>',
+        nextArrow: '<button class="slick-next">Next</button>',
+      });
+    }
+  }
+
+  // 初期化
+  initializeSliders();
+
+  // ウィンドウサイズが変更された時の処理
+  $(window).resize(function () {
+    initializeSliders();
   });
 });

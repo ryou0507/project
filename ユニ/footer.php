@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <a href="/">
+            <a href="<?php echo home_url('/'); ?>">
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-logo.webp" alt="栗栖ユニロゴ" /></a>
         </div>
         <div class="footer-nav">
@@ -15,12 +15,12 @@
         <div class="footer-icons">
             <div class="footer-X-icon">
                 <a href="https://x.com/P_yun1">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="" class="footer-X-img" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-X icon.webp" alt="X icon" class="footer-X-img" />
                 </a>
             </div>
             <div class="footer-youtube-icon">
                 <a href="https://www.youtube.com/@CrisYuni">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="" class="footer-youtube-img" />
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-youtube-icon.webp" alt="youtube icon" class="footer-youtube-img" />
                 </a>
             </div>
         </div>

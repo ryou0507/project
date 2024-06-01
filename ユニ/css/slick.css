@@ -1,119 +1,179 @@
 /* Slider */
-.slick-slider
-{
-    position: relative;
+.slick-slider {
+  position: relative;
 
-    display: block;
-    box-sizing: border-box;
+  display: block;
+  box-sizing: border-box;
 
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-        touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.slick-list
-{
-    position: relative;
+.slick-list {
+  position: relative;
 
-    display: block;
-    overflow: hidden;
+  display: block;
+  overflow: hidden;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.slick-list:focus
-{
-    outline: none;
+.slick-list:focus {
+  outline: none;
 }
-.slick-list.dragging
-{
-    cursor: pointer;
-    cursor: hand;
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
 }
 
 .slick-slider .slick-track,
-.slick-slider .slick-list
-{
-    -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-.slick-track
-{
-    position: relative;
-    top: 0;
-    left: 0;
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .slick-track:before,
-.slick-track:after
-{
-    display: table;
+.slick-track:after {
+  display: table;
 
-    content: '';
+  content: "";
 }
-.slick-track:after
-{
-    clear: both;
+.slick-track:after {
+  clear: both;
 }
-.slick-loading .slick-track
-{
-    visibility: hidden;
+.slick-loading .slick-track {
+  visibility: hidden;
 }
 
-.slick-slide
-{
-    display: none;
-    float: left;
+.slick-slide {
+  display: none;
+  float: left;
 
-    height: 100%;
-    min-height: 1px;
+  height: 100%;
+  min-height: 1px;
 }
-[dir='rtl'] .slick-slide
-{
-    float: right;
+[dir="rtl"] .slick-slide {
+  float: right;
 }
-.slick-slide img
-{
-    display: block;
+.slick-slide img {
+  display: block;
 }
-.slick-slide.slick-loading img
-{
-    display: none;
+.slick-slide.slick-loading img {
+  display: none;
 }
-.slick-slide.dragging img
-{
-    pointer-events: none;
+.slick-slide.dragging img {
+  pointer-events: none;
 }
-.slick-initialized .slick-slide
-{
-    display: block;
+.slick-initialized .slick-slide {
+  display: block;
 }
-.slick-loading .slick-slide
-{
-    visibility: hidden;
+.slick-loading .slick-slide {
+  visibility: hidden;
 }
-.slick-vertical .slick-slide
-{
-    display: block;
+.slick-vertical .slick-slide {
+  display: block;
 
-    height: auto;
+  height: auto;
 
-    border: 1px solid transparent;
+  border: 1px solid transparent;
 }
 .slick-arrow.slick-hidden {
-    display: none;
+  display: none;
+}
+
+/********** aboutページ *************/
+/* slick-arrowクラスのカスタマイズ */
+.slick-prev,
+.slick-next {
+  background: none;
+  border: none;
+  font-size: 0;
+  line-height: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.character-slider .slick-prev,
+.character-slider .slick-next {
+  border-top: 8px solid white;
+  border-right: 8px solid white;
+  width: 20px;
+  height: 20px;
+}
+
+/* 前の矢印のカスタマイズ */
+.slick-prev {
+  left: -35px;
+}
+
+/* 次の矢印のカスタマイズ */
+.slick-next {
+  right: -35px;
+}
+
+/* ボタンのテキストを非表示にする */
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+/********** aboutページ　PC slick **********/
+.aboutpage-main-PC .slick-prev,
+.aboutpage-main-PC .slick-next {
+  background: none;
+  border: none;
+  font-size: 0;
+  line-height: 0;
+  width: 40px; /* 矢印の大きさを大きくする */
+  height: 40px; /* 矢印の大きさを大きくする */
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 50%; /* 矢印の高さを中央に位置付け */
+  transform: translateY(-50%); /* 矢印を中央に揃える */
+}
+
+.aboutpage-main-PC .slick-prev {
+  border-top: 12px solid white; /* 矢印を大きくする */
+  border-left: 12px solid white; /* 矢印を大きくする */
+  transform: rotate(-45deg); /* 矢印の向きを調整 */
+  left: 10px; /* 矢印を中央に寄せる */
+}
+
+.aboutpage-main-PC .slick-next {
+  border-top: 12px solid white; /* 矢印を大きくする */
+  border-left: 12px solid white; /* 矢印を大きくする */
+  transform: rotate(135deg); /* 矢印の向きを調整 */
+  right: 10px; /* 矢印を中央に寄せる */
+}
+
+/* ボタンのテキストを非表示にする */
+.aboutpage-main-PC .slick-prev:before,
+.aboutpage-main-PC .slick-next:before {
+  display: none;
 }
