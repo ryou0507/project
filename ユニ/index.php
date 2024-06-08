@@ -239,7 +239,7 @@
     </div>
   </div>
   <div class="btn-container">
-    <a href="<?php echo home_url('works'); ?>" class="btn btn-gradient"><span>実績一覧はこちら</span></a>
+    <a href="<?php echo home_url('Work'); ?>" class="btn btn-gradient"><span>実績一覧はこちら</span></a>
   </div>
 </section>
 

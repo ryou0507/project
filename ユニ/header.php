@@ -41,8 +41,8 @@ function getCurrentUrl()
                             <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
                             <li><a href="<?php echo home_url(); ?>/about">ABOUT</a></li>
                             <li><a href="<?php echo home_url(); ?>/goods">GOODS</a></li>
-                            <li><a href="<?php echo home_url(); ?>/works">WORKS</a></li>
-                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="<?php echo home_url(); ?>/Work">WORKS</a></li>
+                            <li><a href="<?php echo home_url(); ?>/contact">CONTACT</a></li>
                         </ul>
                         <div class="hamburger-sns">
                             <div class="hamburger-X-icon">
@@ -88,7 +88,7 @@ function getCurrentUrl()
                         <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
                         <li><a href="<?php echo home_url(); ?>/about">ABOUT</a></li>
                         <li><a href="<?php echo home_url(); ?>/goods">GOODS</a></li>
-                        <li><a href="<?php echo home_url(); ?>/works">WORKS</a></li>
+                        <li><a href="<?php echo home_url(); ?>/Work">WORKS</a></li>
                     </ul>
                 </div>
             </div>

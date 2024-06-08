@@ -190,10 +190,7 @@ if (function_exists('add_theme_support')) {
 }
 ?>
 
-
 <?php
-// カスタム投稿タイプ Works を作成
-// カスタム投稿タイプ Works を作成
 function create_post_type_works()
 {
     register_post_type(
@@ -227,19 +224,18 @@ function create_post_type_works()
             'has_archive' => true,
             'rewrite' => array('slug' => 'works'),
             'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
-            'show_in_rest' => true, // Gutenbergエディタを使う場合は、trueにします。
-            'taxonomies' => array('category'), // カテゴリーをサポート
+            'show_in_rest' => true,
+            'taxonomies' => array('category'),
         )
     );
 }
 add_action('init', 'create_post_type_works');
 
-// カスタムフィールドから追加画像を取得する関数
 function get_additional_images($post_id)
 {
     $images = array();
-    for ($i = 1; $i <= 99; $i++) { // 最大5枚の追加画像を想定
-        $image_url = get_post_meta($post_id, 'additional_image_' . $i, true);
+    for ($i = 1; $i <= 99; $i++) {
+        $image_url = get_post_meta($post_id, 'image' . $i, true);
         if ($image_url) {
             $images[] = $image_url;
         }
@@ -248,7 +244,6 @@ function get_additional_images($post_id)
 }
 
 
-// カテゴリーごとの投稿を表示するショートコード
 function display_works_by_category($atts)
 {
     $atts = shortcode_atts(
@@ -303,4 +298,7 @@ function display_works_by_category($atts)
     return ob_get_clean();
 }
 add_shortcode('works_category', 'display_works_by_category');
+
+
+
 ?>
