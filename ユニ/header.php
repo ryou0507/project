@@ -19,7 +19,8 @@ function getCurrentUrl()
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
+
     <!-- TOPへボタン -->
     <div id="top">
         <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
@@ -72,7 +73,7 @@ function getCurrentUrl()
                     </div>
                 </div>
                 <div class="header-inquiry">
-                    <a href="" class="header-inquiry-button btn"><span>お問い合わせ</span></a>
+                    <a href="<?php echo home_url(); ?>/contact" class="header-inquiry-button btn"><span>お問い合わせ</span></a>
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@ function getCurrentUrl()
             </div>
             <div class="pc-header-right">
                 <div class="pc-header-inquiry">
-                    <a href="" class="pc-header-inquiry-button btn">
+                    <a href="<?php echo home_url(); ?>/contact" class="pc-header-inquiry-button btn">
                         <span>お問い合わせ</span>
                     </a>
                 </div>

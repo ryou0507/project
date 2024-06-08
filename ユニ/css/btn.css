@@ -10,7 +10,11 @@
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
-  transform: translateY(93%) rotate(-45deg);
+  transform: translateY(73%) rotate(-45deg);
+}
+
+body.home .dli-chevron-up {
+  transform: translateY(100%) rotate(-45deg) !important;
 }
 
 .top > .btn,
@@ -52,7 +56,7 @@ a.back-to-top:after {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-image: -webkit-gradient(
@@ -71,7 +75,7 @@ a.back-to-top:after {
 a.back-to-top span {
   position: relative;
   z-index: 100;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: white;
   font-weight: bold;
   line-height: 50px; /* テキストを垂直方向に中央揃えにする */
@@ -144,7 +148,7 @@ a.header-inquiry-button:after {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
@@ -156,7 +160,7 @@ a.header-inquiry-button span {
   position: relative;
   z-index: 1;
   font-size: 10px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-weight: 1000;
   top: -1px;
 }
@@ -238,7 +242,7 @@ a.header-inquiry-button:hover:after {
   letter-spacing: 1px;
   font-size: 27px;
   color: white; /* 透明に設定 */
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
   font-style: normal;
   text-decoration: none;
@@ -294,6 +298,11 @@ a.header-inquiry-button:hover:after {
   margin: 7% auto;
 }
 
+.works-btn-container {
+  text-align: center;
+  margin: 0 auto 7% auto;
+}
+
 a.btn-gradient {
   display: inline-block;
   padding: 8px 10px; /* ボタンのパディングを調整 */
@@ -326,7 +335,7 @@ a.btn-gradient:after {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-image: -webkit-gradient(
@@ -345,7 +354,7 @@ a.btn-gradient:after {
 a.btn-gradient span {
   position: relative;
   z-index: 1;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: black;
   font-weight: bold;
 }
@@ -391,7 +400,7 @@ a.pc-about-btn-gradient:after {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-image: -webkit-gradient(
@@ -410,7 +419,7 @@ a.pc-about-btn-gradient:after {
 a.pc-about-btn-gradient span {
   position: relative;
   z-index: 1;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: black;
   font-weight: bold;
 }
@@ -455,7 +464,7 @@ a.buy-btn-gradient:after {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-image: -webkit-gradient(
@@ -474,7 +483,7 @@ a.buy-btn-gradient:after {
 a.buy-btn-gradient span {
   position: relative;
   z-index: 1;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: black;
   font-weight: bold;
 }
@@ -493,7 +502,7 @@ a.buy-btn {
   line-height: 1.5;
   position: relative;
   display: inline-block;
-  padding: 0.1rem 2rem;
+  padding: 0.5rem 2rem;
   cursor: pointer;
   user-select: none;
   transition: all 0.3s;
@@ -510,4 +519,91 @@ a.buy-btn {
     padding: 0.4rem 4rem;
   }
 }
-/**　ここまで　**/
+
+/**********　入力確認へ　ボタン　*********/
+.contact-btn-container {
+  text-align: center;
+  margin: 0 auto 7% auto;
+}
+
+a.contact-btn-gradient {
+  display: inline-block;
+  padding: 8px 70px; /* ボタンのパディングを調整 */
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50px; /* ボタンを丸みを帯びたデザインにする */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+  position: relative; /* :after 要素のために position を追加 */
+  overflow: hidden; /* :after 要素がボタンからはみ出ないようにする */
+  text-decoration: none; /* リンクの下線を削除 */
+}
+
+a.contact-btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+  border-radius: 50px; /* ボタンの丸みを継承 */
+}
+
+a.contact-btn-gradient span {
+  position: relative;
+  z-index: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+a.contact-btn-gradient:hover {
+  color: #fff;
+}
+
+a.contact-btn-gradient:hover:after {
+  opacity: 0;
+}
+
+.contact-btn,
+a.contact-btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .contact-btn,
+  a.contact-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 4rem;
+  }
+}

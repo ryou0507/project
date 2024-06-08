@@ -17,11 +17,11 @@ get_header(); // ヘッダーの読み込み
                 <div class="name">栗栖ユニ</div>
                 <div class="camping">Vのママな人妻メンヘラVTuber</div>
                 <ul class="profile-details">
-                    <li><span>誕生日</span>: 00月00日</li>
-                    <li><span>趣味</span>: 〇〇〇〇〇</li>
+                    <li><span>誕生日</span>: 12月25日</li>
+                    <li><span>趣味</span>: Youtubeを見ること</li>
                     <li><span>身長</span>: 00cm</li>
-                    <li><span>好きな食べ物</span>: 〇〇〇〇〇</li>
-                    <li><span>イメージカラー</span>: 〇〇〇〇〇</li>
+                    <li><span>好きな食べ物</span>: いくら</li>
+                    <li><span>イメージカラー</span>: 紫</li>
                 </ul>
             </div>
             <div class="page-about-sns">
@@ -65,7 +65,7 @@ get_header(); // ヘッダーの読み込み
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
         <div class="btn-container">
-            <a href="" class="btn btn-gradient"><span>お問い合わせ</span></a>
+            <a href="<?php echo home_url(); ?>/contact" class="btn btn-gradient"><span>お問い合わせ</span></a>
         </div>
     </div>
 
@@ -92,19 +92,19 @@ get_header(); // ヘッダーの読み込み
                 <div class="camping">Vのママな人妻メンヘラVTuber</div>
                 <ul class="profile-details">
                     <li><span>誕生日</span>
-                        <p>00月00日</p>
+                        <p>12月25日</p>
                     </li>
                     <li><span>趣味</span>
-                        <p>〇〇〇〇〇</p>
+                        <p>Youtube</p>
                     </li>
                     <li><span>身長</span>
                         <p>00cm</p>
                     </li>
                     <li><span>好きな食べ物</span>
-                        <p>〇〇〇〇〇</p>
+                        <p>いくら</p>
                     </li>
                     <li><span>イメージカラー</span>
-                        <p>〇〇〇〇〇</p>
+                        <p>紫</p>
                     </li>
                 </ul>
             </div>
@@ -136,7 +136,7 @@ get_header(); // ヘッダーの読み込み
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
         <div class="btn-container">
-            <a href="" class="btn btn-gradient"><span>お問い合わせ</span></a>
+            <a href="<?php echo home_url(); ?>/contact" class="btn btn-gradient"><span>お問い合わせ</span></a>
         </div>
     </div>
 </section>

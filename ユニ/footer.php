@@ -10,6 +10,7 @@
                 <li><a href="<?php echo home_url(); ?>/about">ABOUT</a></li>
                 <li><a href="<?php echo home_url(); ?>/goods">GOODS</a></li>
                 <li><a href="<?php echo home_url(); ?>/works">WORKS</a></li>
+                <li><a href="<?php echo home_url('/policy'); ?>">POLICY</a></li>
             </ul>
         </div>
         <div class="footer-icons">

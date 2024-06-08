@@ -56,11 +56,11 @@
       <div class="self">
         <div class="self-item slideConts txt7">
           <p>誕生日</p>
-          <p>○○月○○日</p>
+          <p>12月25日</p>
         </div>
         <div class="self-item slideConts txt8">
           <p>好きな食べ物</p>
-          <p>○○○○○○○</p>
+          <p>いくら</p>
         </div>
         <div class="self-item slideConts txt9">
           <p>身長</p>
@@ -68,7 +68,7 @@
         </div>
         <div class="self-item slideConts txt10">
           <p>イメージカラー</p>
-          <p>○○○○○</p>
+          <p>紫</p>
         </div>
       </div>
 
@@ -119,11 +119,11 @@
         </p>
         <div class="pc-about-details">
           <p class="slide-in_inner leftAnimeInner">誕生日</p>
-          <p class="slide-in_inner leftAnimeInner">〇〇月〇〇日</p>
+          <p class="slide-in_inner leftAnimeInner">12月25日</p>
           <p class="slide-in_inner leftAnimeInner">身長</p>
           <p class="slide-in_inner leftAnimeInner">〇〇cm</p>
           <p class="slide-in_inner leftAnimeInner">イメージカラー</p>
-          <p class="slide-in_inner leftAnimeInner">〇〇〇〇〇〇</p>
+          <p class="slide-in_inner leftAnimeInner">紫</p>
         </div>
 
         <div class="pc-about-sns inview is-show">

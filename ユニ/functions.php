@@ -15,13 +15,24 @@ function load_custom_styles_and_scripts()
     // Font Awesomeの読み込み
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
+    // LightboxのCSSの読み込み
+    wp_enqueue_style('lightbox-css', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css');
+
     // JavaScriptファイルの読み込み
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), null, true);
     wp_enqueue_script('slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), null, true);
     wp_enqueue_script('script-js', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true);
+
+    // LightboxのJSの読み込み
+    wp_enqueue_script('lightbox-js', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js', array('jquery'), null, true);
+
+    // custom.jsの読み込み
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery', 'lightbox-js'), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'load_custom_styles_and_scripts');
+
+
 
 function replace_jquery_version()
 {
@@ -182,6 +193,7 @@ if (function_exists('add_theme_support')) {
 
 <?php
 // カスタム投稿タイプ Works を作成
+// カスタム投稿タイプ Works を作成
 function create_post_type_works()
 {
     register_post_type(
@@ -226,7 +238,7 @@ add_action('init', 'create_post_type_works');
 function get_additional_images($post_id)
 {
     $images = array();
-    for ($i = 1; $i <= 5; $i++) { // 最大5枚の追加画像を想定
+    for ($i = 1; $i <= 99; $i++) { // 最大5枚の追加画像を想定
         $image_url = get_post_meta($post_id, 'additional_image_' . $i, true);
         if ($image_url) {
             $images[] = $image_url;
@@ -234,6 +246,7 @@ function get_additional_images($post_id)
     }
     return $images;
 }
+
 
 // カテゴリーごとの投稿を表示するショートコード
 function display_works_by_category($atts)
@@ -256,13 +269,16 @@ function display_works_by_category($atts)
     $works_query = new WP_Query($query_args);
     ob_start();
 
+    echo '<h2>' . esc_html($atts['category_name']) . '</h2>'; // カテゴリー名を表示
+
     if ($works_query->have_posts()) {
         while ($works_query->have_posts()) {
             $works_query->the_post();
 ?>
             <div class="works-item">
                 <?php if (has_post_thumbnail()) : ?>
-                    <a href="<?php the_permalink(); ?>" class="works-thumbnail">
+                    <a href="<?php echo get_the_post_thumbnail_url(); ?>" data-lightbox="works" class="works-thumbnail shortcode-works-thumbnail">
+                        <?php the_post_thumbnail(); ?>
                     </a>
                 <?php endif; ?>
 
@@ -270,7 +286,7 @@ function display_works_by_category($atts)
                 $additional_images = get_additional_images(get_the_ID());
                 if (!empty($additional_images)) {
                     foreach ($additional_images as $image_url) : ?>
-                        <a href="<?php the_permalink(); ?>" class="works-thumbnail">
+                        <a href="<?php echo esc_url($image_url); ?>" data-lightbox="works" class="works-thumbnail shortcode-works-thumbnail">
                             <img src="<?php echo esc_url($image_url); ?>" class="works-page-image" />
                         </a>
                 <?php endforeach;
@@ -287,3 +303,4 @@ function display_works_by_category($atts)
     return ob_get_clean();
 }
 add_shortcode('works_category', 'display_works_by_category');
+?>
