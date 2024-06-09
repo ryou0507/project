@@ -272,7 +272,7 @@ function display_works_by_category($atts)
 ?>
             <div class="works-item">
                 <?php if (has_post_thumbnail()) : ?>
-                    <a href="<?php echo get_the_post_thumbnail_url(); ?>" data-lightbox="works" class="works-thumbnail shortcode-works-thumbnail">
+                    <a href="<?php echo get_the_post_thumbnail_url(); ?>" data-lightbox="works" class="works-thumbnail shortcode-works-thumbnail" loading="lazy">
                         <?php the_post_thumbnail(); ?>
                     </a>
                 <?php endif; ?>

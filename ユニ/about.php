@@ -65,7 +65,7 @@ get_header(); // ヘッダーの読み込み
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
         <div class="btn-container">
-            <a href="<?php echo home_url(); ?>/contact" class="btn btn-gradient"><span>お問い合わせ</span></a>
+            <a href="<?php echo home_url(); ?>/contact/" class="btn btn-gradient"><span>お問い合わせ</span></a>
         </div>
     </div>
 
@@ -136,7 +136,7 @@ get_header(); // ヘッダーの読み込み
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
         <div class="btn-container">
-            <a href="<?php echo home_url(); ?>/contact" class="btn btn-gradient"><span>お問い合わせ</span></a>
+            <a href="<?php echo home_url(); ?>/contact/" class="btn btn-gradient"><span>お問い合わせ</span></a>
         </div>
     </div>
 </section>

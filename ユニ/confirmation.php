@@ -44,7 +44,7 @@ get_header(); // ヘッダーの読み込み
                     .then(response => {
                         if (response.ok) {
                             // 送信が成功した場合の処理
-                            window.location.href = '<?php echo home_url(); ?>/thankyou'; // 送信完了ページへのリダイレクト
+                            window.location.href = '<?php echo home_url(); ?>/thankyou/'; // 送信完了ページへのリダイレクト
                         } else {
                             throw new Error('Network response was not ok.');
                         }
@@ -78,7 +78,7 @@ get_header(); // ヘッダーの読み込み
                     <div class="contact-row"><p class="contact-option">お名前　:　</p><p class="contact-answer">${formData.companyName || '未入力'}</p></div>
                     <div class="contact-row"><p class="contact-option">お名前（フリガナ)　:　</p><p class="contact-answer">${formData.companyNameKana || '未入力'}</p></div>
                     <div class="contact-row"><p class="contact-option">企業名<span>＊youtubeコラボ依頼の方はアカウント名</span>　:　</p><p class="contact-answer">${formData.contactName}</p></div>
-                    <div class="contact-row"><p class="contact-option">企業名<span>＊youtubeコラボ依頼の方はアカウント名</span>（フリガナ)　:　</p><p class="contact-answer">${formData.contactNameKana}</p></div>
+                    <div class="contact-row"><p class="contact-option">企業名（フリガナ)　:　</p><p class="contact-answer">${formData.contactNameKana}</p></div>
                     <div class="contact-row"><p class="contact-option">電話番号　:　</p><p class="contact-answer">${formData.phone}</p></div>
                     <div class="contact-row"><p class="contact-option">メールアドレス　:　</p><p class="contact-answer">${formData.email}</p></div>
                     <div class="contact-row"><p class="contact-option-long">お問い合わせ内容の詳細　:　</p><p class="contact-answer-long">${formData.inquiryDetails}</p></div>

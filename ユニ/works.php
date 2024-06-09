@@ -13,7 +13,7 @@ get_header(); // ヘッダーの読み込み
                 <div class="works-navigation">
                     <button class="prev-button" onclick="scrollWorks('new-works', 'prev')"></button>
                     <div class="works-page-container" id="new-works-container">
-                        <?php echo do_shortcode('[works_category category="new" category_name="NEW"]'); ?>
+                        <?php echo do_shortcode('[works_category category="category1-works" category_name="NEW"]'); ?>
                     </div>
                     <button class="next-button" onclick="scrollWorks('new-works', 'next')"></button>
                 </div>
@@ -62,7 +62,7 @@ get_header(); // ヘッダーの読み込み
 
         <div class="works-btn">
             <div class="works-btn-container">
-                <a href="<?php echo home_url(); ?>/contact" class="buy-btn buy-btn-gradient"><span>お問い合わせ</span></a>
+                <a href="<?php echo home_url(); ?>/contact/" class="buy-btn buy-btn-gradient"><span>お問い合わせ</span></a>
             </div>
         </div>
     </section>

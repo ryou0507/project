@@ -32,12 +32,12 @@ get_header(); // ヘッダーの読み込み
                     <input class="input-area" type="text" id="companyNameKana" name="companyNameKana" placeholder="お名前（フリガナ）を入力してください。">
                 </div>
                 <div>
-                    <label for="contactName" class="text-area">企業名<span>＊youtubeコラボ依頼の方はアカウント名</span> </label>
+                    <label for="contactName" class="text-area">企業名 <span>＊youtubeコラボ依頼の方はアカウント名</span> </label>
                     <input class="input-area" type="text" id="contactName" name="contactName" placeholder="企業またはVtuberの方はご入力してください。" required>
                 </div>
 
                 <div>
-                    <label for="contactNameKana" class="text-area">企業名<span>＊youtubeコラボ依頼の方はアカウント名</span>（フリガナ） </label>
+                    <label for="contactNameKana" class="text-area">企業名（フリガナ） </label>
                     <input class="input-area" type="text" id="contactNameKana" name="contactNameKana" placeholder="企業またはVtuberの方はご入力してください。" 　required>
                 </div>
 
@@ -53,13 +53,13 @@ get_header(); // ヘッダーの読み込み
 
                 <div>
                     <label for="inquiryDetails" class="text-area">お問い合わせ内容の詳細 <span>＊</span></label>
-                    <textarea id="inquiryDetails" name="inquiryDetails" placeholder="〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇" required></textarea>
+                    <textarea id="inquiryDetails" name="inquiryDetails" placeholder="例：Live2Dモデリングを依頼したいです。" required></textarea>
                 </div>
             </form>
         </div>
 
         <div class="bottom-container">
-            <p><a href="<?php echo home_url('/policy'); ?>">プライバシー・ポリシー</a><br><br>
+            <p><a href="<?php echo home_url(); ?>/policy/">プライバシー・ポリシー</a><br><br>
                 上記をご確認の上で、同意頂けるお客様は下記の同意ボタンにチェックをお願い致します。</p>
         </div>
         <div class="agreement">
@@ -94,7 +94,7 @@ get_header(); // ヘッダーの読み込み
                     sessionStorage.setItem('formData', json);
 
                     // confirmationに移動
-                    window.location.href = '<?php echo home_url(); ?>/confirmation';
+                    window.location.href = '<?php echo home_url(); ?>/confirmation/';
                 } else {
                     // バリデーション失敗または同意がチェックされていない場合の処理
                     alert('必須項目を全て入力し、利用規約に同意の上、再度お試しください。');

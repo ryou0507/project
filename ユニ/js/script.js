@@ -233,14 +233,27 @@ $(function () {
 
 /**********　image-container　アニメーション　**********/
 $(function () {
-  // inviewイベントの設定
-  $('.image-container.inview')
+  // ターゲット要素に対してInViewを適用
+  $('.work-item, .image-container.inview')
     .inView()
     .on('inview', function (event, isInView) {
       if (isInView) {
-        $(this).addClass('is-show').off('inview'); // 一度だけクラスを追加し、その後イベントをオフにする
+        // work-itemに対する処理
+        if ($(this).hasClass('work-item')) {
+          $(this)
+            .css({ visibility: 'visible', opacity: 0 })
+            .addClass('slide-in');
+        }
+        // image-containerに対する処理
+        if ($(this).hasClass('image-container')) {
+          $(this).addClass('is-show');
+          // 一度だけクラスを追加し、その後イベントをオフにする
+          $(this).off('inview');
+        }
       } else {
-        $(this).removeClass('is-show');
+        if ($(this).hasClass('image-container')) {
+          $(this).removeClass('is-show');
+        }
       }
     });
 });
@@ -398,6 +411,8 @@ function applySlideAnimeToGoodsSection() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          entry.target.style.visibility = 'visible';
+          entry.target.style.opacity = 1;
           entry.target.classList.add('slideAnimeLeftRight');
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }
@@ -418,6 +433,8 @@ function applySlideAnimeSlowToGoodsSection() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          entry.target.style.visibility = 'visible';
+          entry.target.style.opacity = 1;
           entry.target.classList.add('slideAnimeLeftRightSlow');
           observer.unobserve(entry.target); // アニメーション適用後にオブザーバーから削除
         }

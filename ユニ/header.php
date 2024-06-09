@@ -39,10 +39,10 @@ function getCurrentUrl()
                     <div class="hamburger-menu">
                         <ul class="nav-links" id="nav-links">
                             <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
-                            <li><a href="<?php echo home_url(); ?>/about">ABOUT</a></li>
-                            <li><a href="<?php echo home_url(); ?>/goods">GOODS</a></li>
-                            <li><a href="<?php echo home_url(); ?>/Work">WORKS</a></li>
-                            <li><a href="<?php echo home_url(); ?>/contact">CONTACT</a></li>
+                            <li><a href="<?php echo home_url(); ?>/about/">ABOUT</a></li>
+                            <li><a href="<?php echo home_url(); ?>/goods/">GOODS</a></li>
+                            <li><a href="<?php echo home_url(); ?>/Work/">WORKS</a></li>
+                            <li><a href="<?php echo home_url(); ?>/contact/">CONTACT</a></li>
                         </ul>
                         <div class="hamburger-sns">
                             <div class="hamburger-X-icon">
@@ -73,7 +73,7 @@ function getCurrentUrl()
                     </div>
                 </div>
                 <div class="header-inquiry">
-                    <a href="<?php echo home_url(); ?>/contact" class="header-inquiry-button btn"><span>お問い合わせ</span></a>
+                    <a href="<?php echo home_url(); ?>/contact/" class="header-inquiry-button btn"><span>お問い合わせ</span></a>
                 </div>
             </div>
         </div>
@@ -86,15 +86,15 @@ function getCurrentUrl()
                 <div class="pc-header-nav">
                     <ul class="pc-nav-links">
                         <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
-                        <li><a href="<?php echo home_url(); ?>/about">ABOUT</a></li>
-                        <li><a href="<?php echo home_url(); ?>/goods">GOODS</a></li>
-                        <li><a href="<?php echo home_url(); ?>/Work">WORKS</a></li>
+                        <li><a href="<?php echo home_url(); ?>/about/">ABOUT</a></li>
+                        <li><a href="<?php echo home_url(); ?>/goods/">GOODS</a></li>
+                        <li><a href="<?php echo home_url(); ?>/Work/">WORKS</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pc-header-right">
                 <div class="pc-header-inquiry">
-                    <a href="<?php echo home_url(); ?>/contact" class="pc-header-inquiry-button btn">
+                    <a href="<?php echo home_url(); ?>/contact/" class="pc-header-inquiry-button btn">
                         <span>お問い合わせ</span>
                     </a>
                 </div>

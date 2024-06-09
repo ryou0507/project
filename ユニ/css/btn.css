@@ -10,11 +10,30 @@
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
-  transform: translateY(73%) rotate(-45deg);
+  transform: translateY(75%) rotate(-45deg);
 }
 
 body.home .dli-chevron-up {
   transform: translateY(100%) rotate(-45deg) !important;
+}
+
+#top .btn,a.btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+#top .btn {
+  z-index: 1100;
 }
 
 .top > .btn,
@@ -103,7 +122,7 @@ a.back-to-top:hover:after {
 /**********　お問い合わせボタン　レイアウト　********/
 .btn,
 a.btn {
-  font-size: 1rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   position: relative;
   display: inline-block;
@@ -139,7 +158,7 @@ a.header-inquiry-button {
   background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
   border-radius: 100px;
   left: -17px;
-  top: -14px;
+  top: 2px;
 }
 
 a.header-inquiry-button:after {
@@ -162,7 +181,7 @@ a.header-inquiry-button span {
   font-size: 10px;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 1000;
-  top: -1px;
+  top: 0px;
 }
 
 a.header-inquiry-button:hover {
@@ -178,7 +197,7 @@ a.header-inquiry-button:hover:after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 13px 20px;
   background-color: #272526;
   position: relative;
   z-index: 2; /* メニューより前面に表示 */
@@ -246,7 +265,9 @@ a.header-inquiry-button:hover:after {
   font-weight: bold;
   font-style: normal;
   text-decoration: none;
-  -webkit-text-stroke: 1.7px #dba2f7;
+  text-shadow: 1px 1px 0 #dba2f7, -1px -1px 0 #dba2f7, -1px 1px 0 #dba2f7,
+    1px -1px 0 #dba2f7, 0px 1px 0 #dba2f7, 0-1px 0 #dba2f7, -1px 0 0 #dba2f7,
+    1px 0 0 #dba2f7;
 }
 
 .hamburger-sns {

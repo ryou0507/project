@@ -332,6 +332,7 @@ select {
   position: fixed; /* ヘッダーを固定位置に設定 */
   top: 0;
   width: 100%;
+  height: 60px;
   z-index: 1000; /* 他のコンテンツの上に表示 */
   background-color: #272526; /* ヘッダーの背景色 */
 }
@@ -341,6 +342,7 @@ select {
   align-items: center;
   justify-content: space-between;
   background-color: #272526;
+  position: relative;
 }
 
 .header-sns {
@@ -350,13 +352,10 @@ select {
 .header-X-icon {
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  position: relative;
-  top: 26px;
-  left: -107px;
+  position: absolute;
+  top: 21px;
+  right: 165px;
 }
 
 .header-X-img {
@@ -366,9 +365,9 @@ select {
 
 .header-youtube-icon {
   overflow: hidden;
-  position: relative;
-  top: 23px;
-  left: -100px;
+  position: absolute;
+  top: 15px;
+  right: 130px;
 }
 
 .header-youtube-img {
@@ -383,7 +382,7 @@ select {
   height: auto;
   width: 100%;
   overflow: hidden;
-  margin-top: 50px;
+  padding-top: 50px;
   background-color: #000;
   z-index: 99;
 }
@@ -456,6 +455,7 @@ img.firstview-logo {
 @media (min-width: 768px) {
   .firstview-container {
     margin-top: 0px;
+    padding-top: 0px;
   }
 }
 
@@ -1115,6 +1115,9 @@ inview
   font-weight: 400;
   font-style: normal;
   position: relative; /* 子要素の位置を相対的にするために追加 */
+  visibility: hidden; /* 初期状態では非表示 */
+  opacity: 0; /* 初期状態では透明 */
+  transition: visibility 0s, opacity 0.5s linear; /* 透明度の変化を滑らかにする */
 }
 
 .goods-item p {
@@ -1301,6 +1304,11 @@ inview
   background-color: #000;
 }
 
+.op {
+  opacity: 1 !important;
+  visibility: visible;
+}
+
 .center-h1 {
   letter-spacing: 1px;
   font-size: 3em;
@@ -1399,7 +1407,11 @@ inview
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: scroll;
+  scrollbar-width: none; 
   width: 100%;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .works-item {
@@ -1408,6 +1420,11 @@ inview
   flex-wrap: nowrap;
   overflow: hidden;
   width: 100%;
+  overflow-x: auto; /* 横スクロールを有効に */
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .works-item a.works-thumbnail {
@@ -1537,6 +1554,10 @@ button.next-button {
 }
 
 @media (min-width: 768px) {
+.works-item {
+  overflow-x: visible;
+}
+
   .works-item a.works-thumbnail {
     width: calc(25% - 45px);
     padding-bottom: calc(25% - 45px);
@@ -2256,8 +2277,8 @@ p.long-contents {
 
 .center-h1-long {
   letter-spacing: 1px;
-  font-size: 3em;
-  padding-top: 80px;
+  font-size: 1.7em;
+  padding-top: 120px;
   margin-bottom: 10px;
   position: relative;
   font-family: 'Rampart One', sans-serif;
@@ -2275,7 +2296,7 @@ p.long-contents {
 .center-h1-long::after {
   content: '';
   display: block;
-  width: 64%; /* 線の幅を調整可能に */
+  width: 90%; /* 線の幅を調整可能に */
   margin: 2% auto 12% auto;
   border-bottom: 2px solid #ff7fee; /* ラインの色を紫に設定 */
   opacity: 0; /* 初期状態は非表示 */
