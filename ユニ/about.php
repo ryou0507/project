@@ -14,7 +14,7 @@ get_header(); // ヘッダーの読み込み
 <section class="aboutpage-section">
     <h1 class="center-h1 scroll-reveal">ABOUT</h1>
     <!-- スマホ表示 -->
-    <div class="aboutpage-main" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-aboutpage-back.webp'); background-size: cover; background-position:center; background-repeat: no-repeat; padding: 20px; border-radius:5%">
+    <div class="aboutpage-main" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-aboutpage-back.webp'); background-size: cover; background-position:center; background-repeat: no-repeat; padding: 20px; border-radius:20px">
         <div class="aboutpage-container">
             <div class="page-profile">
                 <div class="kana">Cris Yuni</div>
@@ -68,8 +68,10 @@ get_header(); // ヘッダーの読み込み
             <h3>イラストレーター</h3>
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
-        <div class="btn-container">
-            <a href="<?php echo home_url(); ?>/contact/" class="btn btn-gradient"><span>お問い合わせ</span></a>
+        <div class="works-btn">
+            <div class="works-btn-container">
+                <a href="<?php echo home_url(); ?>/contact/" class="buy-btn buy-btn-gradient"><span>お問い合わせ</span></a>
+            </div>
         </div>
     </div>
 
