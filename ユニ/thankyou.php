@@ -4,10 +4,14 @@ Template Name: thankyou
 */
 get_header(); // ヘッダーの読み込み
 ?>
+
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
 <main>
     <section class="thankyou-section">
         <div class="contact-title">
-            <h1 class="center-h1 inview">CONTACT</h1>
+            <h1 class="center-h1 scroll-reveal">CONTACT</h1>
         </div>
         <div class="input-complete">
             <p>入力完了<br>

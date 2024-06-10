@@ -2,6 +2,10 @@
 get_header();
 ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
@@ -12,7 +16,7 @@ get_header();
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="entry-header">
-                    <?php the_title('<h1 class="center-h1-long inview">', '</h1>'); ?>
+                    <?php the_title('<h1 class="center-h1-long scroll-reveal">', '</h1>'); ?>
                 </header><!-- .entry-header -->
 
                 <div class="entry-content">

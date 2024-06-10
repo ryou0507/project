@@ -5,10 +5,14 @@ Template Name: contact
 get_header(); // ヘッダーの読み込み
 ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <main>
     <section class="contact-section">
         <div class="contact-title">
-            <h1 class="center-h1 inview">CONTACT</h1>
+            <h1 class="center-h1 scroll-reveal">CONTACT</h1>
         </div>
         <div class="input-container">
             <form id="contactForm">
@@ -32,7 +36,7 @@ get_header(); // ヘッダーの読み込み
                     <input class="input-area" type="text" id="companyNameKana" name="companyNameKana" placeholder="お名前（フリガナ）を入力してください。">
                 </div>
                 <div>
-                    <label for="contactName" class="text-area">企業名 <span>＊youtubeコラボ依頼の方はアカウント名</span> </label>
+                    <label for="contactName" class="text-area">企業名 <span>※youtubeコラボ依頼の方はアカウント名</span> </label>
                     <input class="input-area" type="text" id="contactName" name="contactName" placeholder="企業またはVtuberの方はご入力してください。" required>
                 </div>
 

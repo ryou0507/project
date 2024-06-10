@@ -108,6 +108,30 @@ document.addEventListener('DOMContentLoaded', function () {
   $window.trigger('scroll');
 })(jQuery);
 
+/**********　top-h2のアニメーションの実装　**********/
+document.addEventListener('DOMContentLoaded', function () {
+  function addObserver(el) {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(el);
+  }
+
+  function scrollTrigger(selector) {
+    let elements = document.querySelectorAll(selector);
+    elements.forEach((el) => {
+      addObserver(el);
+    });
+  }
+
+  scrollTrigger('.scroll-reveal');
+});
+
 /**********　スマホ　ABOUT　imgアニメーション　**********/
 $(function () {
   // inviewイベントの設定

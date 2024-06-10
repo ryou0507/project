@@ -22,9 +22,7 @@ function getCurrentUrl()
 <body <?php body_class(); ?>>
 
     <!-- TOPへボタン -->
-    <div id="top">
-        <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
-    </div>
+
 
     <!-- スマホ用ヘッダー -->
     <div class="header">

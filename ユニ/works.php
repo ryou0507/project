@@ -5,9 +5,13 @@ Template Name: Works
 get_header(); // ヘッダーの読み込み
 ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <main>
     <section class="works-page-section">
-        <h1 class="center-h1 inview">WORKS</h1>
+        <h1 class="center-h1 scroll-reveal">WORKS</h1>
         <div class="works-content">
             <section id="new-works">
                 <div class="works-navigation">

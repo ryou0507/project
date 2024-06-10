@@ -7,10 +7,14 @@ get_header(); // ヘッダーの読み込み
 
 ?>
 
+<div id="top">
+  <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <main>
   <div class="goods-main">
     <section class="goods-section">
-      <h1 class="center-h1 inview">GOODS</h1>
+      <h1 class="center-h1 scroll-reveal">GOODS</h1>
       <div class="goods-container">
         <div class="goods-item slide-in leftAnimeSlow op">
           <div class="image-container slider inview">

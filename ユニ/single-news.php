@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <main id="main-content">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

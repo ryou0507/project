@@ -5,10 +5,14 @@ Template Name: confirmation
 get_header(); // ヘッダーの読み込み
 ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <main>
     <section class="confirmation-section">
         <div class="contact-title">
-            <h1 class="center-h1 inview">CONTACT</h1>
+            <h1 class="center-h1 scroll-reveal">CONTACT</h1>
         </div>
         <div class="confirmationDetails-container">
             <div id="confirmationDetails">
@@ -77,7 +81,7 @@ get_header(); // ヘッダーの読み込み
                     <div class="contact-row"><p class="contact-option">カテゴリー　:　</p><p class="contact-answer">${categoryMapping[formData.category] || '選択されていません'}</p></div>
                     <div class="contact-row"><p class="contact-option">お名前　:　</p><p class="contact-answer">${formData.companyName || '未入力'}</p></div>
                     <div class="contact-row"><p class="contact-option">お名前（フリガナ)　:　</p><p class="contact-answer">${formData.companyNameKana || '未入力'}</p></div>
-                    <div class="contact-row"><p class="contact-option">企業名<span>＊youtubeコラボ依頼の方はアカウント名</span>　:　</p><p class="contact-answer">${formData.contactName}</p></div>
+                    <div class="contact-row"><p class="contact-option">企業名<span>※youtubeコラボ依頼の方はアカウント名</span>　:　</p><p class="contact-answer">${formData.contactName}</p></div>
                     <div class="contact-row"><p class="contact-option">企業名（フリガナ)　:　</p><p class="contact-answer">${formData.contactNameKana}</p></div>
                     <div class="contact-row"><p class="contact-option">電話番号　:　</p><p class="contact-answer">${formData.phone}</p></div>
                     <div class="contact-row"><p class="contact-option">メールアドレス　:　</p><p class="contact-answer">${formData.email}</p></div>

@@ -404,7 +404,7 @@ select {
 
 .firstview-content {
   position: absolute;
-  top: 52%;
+  top: 61%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -451,11 +451,20 @@ img.firstview-logo {
   }
 }
 
+.main-container {
+  background-color: black;
+}
+
 /**********　PC用ファーストビュー　レイアウト　**********/
 @media (min-width: 768px) {
   .firstview-container {
     margin-top: 0px;
     padding-top: 0px;
+  }
+
+  .firstview-content {
+    top: 55%;
+    left: 51%;
   }
 }
 
@@ -467,38 +476,46 @@ inview
   overflow: hidden; /* アニメーションの範囲外を隠す */
 }
 
-.fadeIn_right {
-  opacity: 0;
-  transform: translate(50%, 0);
-  transition: 1s;
-}
-
-.fadeIn_right.is-show {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-
 .top-h2 {
   letter-spacing: 1px;
   font-size: 3em;
-  color: #000; /* 透明に設定 */
+  color: transparent;
   margin-bottom: 10px;
   position: relative;
   font-family: 'Rampart One', sans-serif;
   font-weight: 400;
   font-style: normal;
-  -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
-  color: transparent; /* テキストの色を透明に設定 */
+  -webkit-text-stroke: 1px #ff7fee;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(100%);
 }
 
-/* タイトル下の線のスタイル */
+.top-h2.scroll-animation {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
 .top-h2::after {
   content: '';
   display: block;
-  width: 97%; /* 線の幅を調整可能に */
+  width: 97%;
   margin: 10px 0 10% 0;
-  border-bottom: 1px solid #ff7fee; /* ラインの色を紫に設定 */
+  border-bottom: 1px solid #ff7fee;
+  opacity: 0;
+  transform: translateX(100%);
 }
+
+.top-h2.scroll-animation::after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
+}
+
+
+
+
 
 @media (min-width: 768px) {
   .top-h2 {
@@ -507,6 +524,46 @@ inview
     margin-left: 25px;
   }
 }
+
+.center-h1 {
+  letter-spacing: 1px;
+  font-size: 3em;
+  padding-top: 80px;
+  margin-bottom: 10px;
+  position: relative;
+  font-family: 'Rampart One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
+  color: transparent; /* テキストの色を透明に設定 */
+  text-align: center;
+  overflow: hidden; /* アニメーションを適用するための設定 */
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateX(100%); /* 初期位置を右側に設定 */
+}
+
+.center-h1.scroll-animation {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.center-h1::after {
+  content: '';
+  display: block;
+  width: 64%; /* 線の幅を調整可能に */
+  margin: 2% auto 12% auto;
+  border-bottom: 2px solid #ff7fee; /* ラインの色を紫に設定 */
+  opacity: 0; /* 初期状態は非表示 */
+  transform: translateX(100%); /* 初期位置を右側に設定 */
+}
+
+.center-h1.scroll-animation::after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
+}
+
 
 /**********　スマホ用ABOUT　レイアウト　**********/
 .about-section {
@@ -600,6 +657,10 @@ inview
 
 .self-item {
   padding-bottom: 10px;
+}
+
+.self-item span {
+  color: #ffa0f4;
 }
 
 .slideConts {
@@ -788,6 +849,10 @@ inview
   white-space: nowrap;
   display: flex;
   flex-direction: column;
+}
+
+.pink {
+  color: #ffa0f4 !important;
 }
 
 .pc-about-details p {
@@ -1309,45 +1374,7 @@ inview
   visibility: visible;
 }
 
-.center-h1 {
-  letter-spacing: 1px;
-  font-size: 3em;
-  padding-top: 80px;
-  margin-bottom: 10px;
-  position: relative;
-  font-family: 'Rampart One', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  -webkit-text-stroke: 1px #ff7fee; /* テキストの輪郭を設定 */
-  color: transparent; /* テキストの色を透明に設定 */
-  text-align: center;
-  overflow: hidden; /* アニメーションを適用するための設定 */
-  opacity: 0; /* 初期状態は非表示 */
-  transform: translateX(100%); /* 初期位置を右側に設定 */
-  animation: slide-in 1s ease forwards; /* アニメーションを適用 */
-}
 
-.center-h1::after {
-  content: '';
-  display: block;
-  width: 64%; /* 線の幅を調整可能に */
-  margin: 2% auto 12% auto;
-  border-bottom: 2px solid #ff7fee; /* ラインの色を紫に設定 */
-  opacity: 0; /* 初期状態は非表示 */
-  transform: translateX(100%); /* 初期位置を右側に設定 */
-  animation: slide-in 1s ease forwards 0.5s; /* アニメーションを適用 */
-}
-
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 /**********　goodsページ　PC用　レイアウト　**********/
 @media (min-width: 768px) {
@@ -1586,6 +1613,10 @@ button.next-button {
 }
 
 /**********　フッター　レイアウト　**********/
+footer {
+  background-color: #272526; 
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -2277,8 +2308,8 @@ p.long-contents {
 
 .center-h1-long {
   letter-spacing: 1px;
-  font-size: 1.7em;
-  padding-top: 120px;
+  font-size: 1.8rem;
+  padding-top: 80px;
   margin-bottom: 10px;
   position: relative;
   font-family: 'Rampart One', sans-serif;
@@ -2290,7 +2321,12 @@ p.long-contents {
   overflow: hidden; /* アニメーションを適用するための設定 */
   opacity: 0; /* 初期状態は非表示 */
   transform: translateX(100%); /* 初期位置を右側に設定 */
-  animation: slide-in 1s ease forwards; /* アニメーションを適用 */
+}
+
+.center-h1-long.scroll-animation {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 .center-h1-long::after {
@@ -2301,19 +2337,15 @@ p.long-contents {
   border-bottom: 2px solid #ff7fee; /* ラインの色を紫に設定 */
   opacity: 0; /* 初期状態は非表示 */
   transform: translateX(100%); /* 初期位置を右側に設定 */
-  animation: slide-in 1s ease forwards 0.5s; /* アニメーションを適用 */
 }
 
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.center-h1-long.scroll-animation::after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
 }
+
+
 
 @media (min-width: 768px) {
   .center-h1-long {

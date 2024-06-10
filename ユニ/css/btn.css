@@ -10,7 +10,7 @@
   border-left: 0;
   border-bottom: 0;
   box-sizing: border-box;
-  transform: translateY(75%) rotate(-45deg);
+  transform: translateY(70%) rotate(-45deg);
 }
 
 body.home .dli-chevron-up {

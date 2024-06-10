@@ -7,8 +7,12 @@ get_header(); // ヘッダーの読み込み
 
 ?>
 
+<div id="top">
+    <a href="#top" class="btn back-to-top"><span class="dli-chevron-up"></span></a>
+</div>
+
 <section class="aboutpage-section">
-    <h1 class="center-h1">ABOUT</h1>
+    <h1 class="center-h1 scroll-reveal">ABOUT</h1>
     <!-- スマホ表示 -->
     <div class="aboutpage-main" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/images/yuni-aboutpage-back.webp'); background-size: cover; background-position:center; background-repeat: no-repeat; padding: 20px; border-radius:5%">
         <div class="aboutpage-container">
