@@ -139,8 +139,10 @@ get_header(); // ヘッダーの読み込み
             <h3>イラストレーター</h3>
             <div class="activity-box">〇〇〇〇〇〇〇〇〇〇</div>
         </div>
-        <div class="btn-container">
-            <a href="<?php echo home_url(); ?>/contact/" class="btn btn-gradient"><span>お問い合わせ</span></a>
+        <div class="works-btn">
+            <div class="works-btn-container">
+                <a href="<?php echo home_url(); ?>/contact/" class="buy-btn buy-btn-gradient"><span>お問い合わせ</span></a>
+            </div>
         </div>
     </div>
 </section>

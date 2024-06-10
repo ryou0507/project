@@ -513,10 +513,6 @@ inview
   transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
 }
 
-
-
-
-
 @media (min-width: 768px) {
   .top-h2 {
     font-size: clamp(3em, 9vw, 5em) !important;
@@ -563,7 +559,6 @@ inview
   transform: translateX(0);
   transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
 }
-
 
 /**********　スマホ用ABOUT　レイアウト　**********/
 .about-section {
@@ -794,6 +789,7 @@ inview
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 7%;
 }
 
 .pc-about-X-icon {
@@ -1374,8 +1370,6 @@ inview
   visibility: visible;
 }
 
-
-
 /**********　goodsページ　PC用　レイアウト　**********/
 @media (min-width: 768px) {
   .center-h1 {
@@ -1434,7 +1428,7 @@ inview
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   width: 100%;
   ::-webkit-scrollbar {
     display: none;
@@ -1581,9 +1575,9 @@ button.next-button {
 }
 
 @media (min-width: 768px) {
-.works-item {
-  overflow-x: visible;
-}
+  .works-item {
+    overflow-x: visible;
+  }
 
   .works-item a.works-thumbnail {
     width: calc(25% - 45px);
@@ -1614,7 +1608,7 @@ button.next-button {
 
 /**********　フッター　レイアウト　**********/
 footer {
-  background-color: #272526; 
+  background-color: #272526;
 }
 
 .footer-container {
@@ -2344,8 +2338,6 @@ p.long-contents {
   transform: translateX(0);
   transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
 }
-
-
 
 @media (min-width: 768px) {
   .center-h1-long {
